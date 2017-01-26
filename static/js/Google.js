@@ -7,7 +7,7 @@ function onSignIn(googleUser) {
         console.log('Family Name: ' + profile.getFamilyName());
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail());
-        $("body").append("<p> Hello "+profile.getGivenName()+" you probably wonder how I know your name??!! I also know your last name:"+profile.()+getFamilyName()"</p>"); 
+        $("body").append("<p> Hello "+profile.getGivenName()+" you probably wonder how I know your name??!! I also know your last name:"+profile.getFamilyName()+"</p>"); 
 
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
