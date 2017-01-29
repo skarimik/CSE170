@@ -5,6 +5,7 @@ body {
 }
 
 .form-signin {
+  padding-top: 30%;
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
@@ -37,4 +38,8 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.g-signin2{
+  width:100px;
+  padding: 30px;
 }
