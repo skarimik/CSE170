@@ -10,7 +10,7 @@ function onSignIn(googleUser) {
         
         $('#FirstName').text("First Name: " + profile.getGivenName());
         $('#LastName').text("Last Name: " + profile.getFamilyName());
-        $('#singIn').remove();
+        $('#signIn').remove();
         
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
