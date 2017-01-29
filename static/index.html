@@ -23,10 +23,14 @@
 </head>
 
 <body>
-	<div id="signIn" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-    <div id="FirstName"></div>
-    <div id="LastName"></div>
-    <div></div>
+	<div class="container">
+		<form class="form-signin">
+			<h2 class= "form-signin-heading">Please sing in</h2>
+			<div id="signIn" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    		<div id="FirstName"></div>
+    		<div id="LastName"></div>
+    	</form>
+    </div>
     <script src="./js/Google.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 	<script src="https://code.jquery.com/jquery.js"></script>
