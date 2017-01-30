@@ -577,7 +577,12 @@
     <script>
     $(document).ready(settingUp());
     </script>
-
+    <script>
+        $('#FirstName').click(function(e){
+            e.preventDefault();
+            settingUp();
+        });
+    </script>
 </body>
 
 </html>
