@@ -55,13 +55,12 @@
 /* Sidebar Styles */
 
 .sidebar-nav {
-    /*position: absolute;*/
-    top: 0;
+    position: absolute;
+    top: 50px;
     width: 250px;
     margin: 0;
     padding: 0;
     list-style: none;
-    padd
 }
 
 .sidebar-nav li {
