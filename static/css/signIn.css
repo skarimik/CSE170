@@ -5,12 +5,13 @@ body {
 }
 
 .form-signin {
-  padding-top: 30%;
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
+  padding-top: 10em;
+  padding-left:20em;
+  
 }
-.form-signin .form-signin-heading,
+.form-signin .form-signin-heading{
+  color:green;
+}
 .form-signin .checkbox {
   margin-bottom: 10px;
 }
@@ -40,6 +41,6 @@ body {
   border-top-right-radius: 0;
 }
 .g-signin2{
-  width:100px;
-  padding: 30px;
+  padding-left: 4em;
+
 }

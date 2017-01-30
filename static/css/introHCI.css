@@ -28,7 +28,7 @@ img.thumbnail{
    the CSS to the page. feel free to remove it once the link is working. */
 body {
      border: 1px dotted gray;
-     padding: 20px;
+     padding: 0px;
 }
 /*p{
      font-variant: small-caps;
