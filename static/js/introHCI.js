@@ -1,5 +1,5 @@
 
 function onClick(){
-	$("#start").load("http://www.w3schools.com");
+	$("#start").load("./i.html");
 	$("#butt").text("Hello me");
 }
