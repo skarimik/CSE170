@@ -1,3 +1,5 @@
+var person;
+var id_token;
 function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
@@ -13,8 +15,12 @@ function onSignIn(googleUser) {
         $('#signIn').remove();
         $('#signin-form').remove();
         $('#sign-container').remove();
-        
+        person = profile;
+        $('#index2').context("FirstName") = profile.getGivenName(); 
         // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
+        id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
 };
+function settingUp(){
+        $('#FirstName').text(person.getGivenName());
+}
