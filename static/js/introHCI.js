@@ -1,5 +1,5 @@
-var React = require('react');
-var ReactDOM = require('react_dom');
 
-var myDiv = <div> I am soheil</div>;
-ReactDOM.render(myDiv,document.getElementById('app'));
+function onClick(){
+	$("#start").load("http://www.w3schools.com");
+	$("#butt").text("Hello me");
+}
