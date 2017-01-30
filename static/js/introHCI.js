@@ -1,5 +1,5 @@
 
 function onClick(){
-	$("#start").load("./i.html");
+	$("#start").load("./start/index.html");
 	$("#butt").text("Hello me");
 }
