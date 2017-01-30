@@ -499,6 +499,12 @@
 
     <!-- Theme JavaScript -->
     <script src="./start/js/freelancer.min.js"></script>
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
 
 </body>
 
