@@ -3,7 +3,7 @@
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
 var cam_video_id = "camsource"
-/*
+
 
 function xabc(){
 
@@ -76,7 +76,7 @@ window.addEventListener('DOMContentLoaded', function() {
 })*/
 var cam = null;
 function startReading(){
-    //xabc();
+    xabc();
     
     cam = camera(cam_video_id);
     cam.start();
