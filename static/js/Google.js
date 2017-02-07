@@ -9,8 +9,10 @@ function onSignIn(googleUser) {
         console.log('Family Name: ' + profile.getFamilyName());
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail());
-        $("#start").load("../index2.html");
-        $("#QRscanner").load("cam.html");
+        $("#start").load("../index2.html",function(){
+                $("#QRscanner").load("cam.html");
+        });
+        
         $('#FirstName').text("First Name: " + profile.getGivenName());
         $('#LastName').text("Last Name: " + profile.getFamilyName());
         $('#signIn').remove();
