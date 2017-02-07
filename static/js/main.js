@@ -36,25 +36,19 @@ function successCallback(stream) {
   window.stream = stream; // make stream available to console
   videoElement.src = window.URL.createObjectURL(stream);
   videoElement.play();
-  alert("success");
 }
 
 function errorCallback(error) {
-  alert('navigator.getUserMedia error: ', error);
+  console.log('navigator.getUserMedia error: ', error);
 }
 
 function start() {
-  alert("window stream = "+ window.stream);
   if (window.stream) {
     videoElement.src = null;
-    alert("window stream is going to stop");
-    //window.stream.stop();
-    alert("window stream stoped");
+    window.stream.stop();
   }
   var audioSource = audioSelect.value;
-  
   var videoSource = videoSelect.value;
-  alert("videoSource now is = "+ videoSource);
   var constraints = {
     audio: {
       optional: [{
