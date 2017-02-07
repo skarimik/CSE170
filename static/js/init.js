@@ -5,7 +5,7 @@ navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia 
 var cam_video_id = "camsource"
 
 
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function xabc() {
     // Assign the <video> element to a variable
     var video = document.getElementById(cam_video_id);
     var options = {
@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', function() {
     // Replace the source of the video element with the stream from the camera
     if (navigator.getUserMedia) {
         navigator.getUserMedia(options, function(stream) {
-           
+
             video.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
 
         }, function(error) {
