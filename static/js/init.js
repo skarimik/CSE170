@@ -15,7 +15,9 @@ window.addEventListener('DOMContentLoaded', function() {
     // Replace the source of the video element with the stream from the camera
     if (navigator.getUserMedia) {
         navigator.getUserMedia(options, function(stream) {
+            while(!video);   
             video.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
+
         }, function(error) {
             console.log(error)
         });
