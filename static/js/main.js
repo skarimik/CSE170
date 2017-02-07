@@ -36,10 +36,11 @@ function successCallback(stream) {
   window.stream = stream; // make stream available to console
   videoElement.src = window.URL.createObjectURL(stream);
   videoElement.play();
+  alert("success");
 }
 
 function errorCallback(error) {
-  console.log('navigator.getUserMedia error: ', error);
+  alert('navigator.getUserMedia error: ', error);
 }
 
 function start() {
@@ -61,7 +62,6 @@ function start() {
       }]
     }
   };
-  successCallback(windw.stream);
   navigator.getUserMedia(constraints, successCallback, errorCallback);
 }
 
