@@ -47,6 +47,7 @@ function start() {
   alert("window stream = "+ window.stream);
   if (window.stream) {
     videoElement.src = null;
+    alert("window stream is going to stop");
     window.stream.stop();
     alert("window stream stoped");
   }
