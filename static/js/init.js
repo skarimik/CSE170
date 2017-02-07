@@ -3,8 +3,17 @@
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
 var cam_video_id = "camsource"
+/*
 
 function xabc(){
+
+
+
+
+
+
+
+
      // Assign the <video> element to a variable
     var video = document.getElementById(cam_video_id);
     var options = {
@@ -28,6 +37,13 @@ function xabc(){
     }
 }
 window.addEventListener('DOMContentLoaded', function() {
+
+
+
+
+
+
+
     // Assign the <video> element to a variable
     var video = document.getElementById(cam_video_id);
     var options = {
@@ -35,23 +51,7 @@ window.addEventListener('DOMContentLoaded', function() {
         "video": true
 
     };
-    if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) {
-  console.log("enumerateDevices() not supported.");
-  return;
-}
 
-// List cameras and microphones.
-
-navigator.mediaDevices.enumerateDevices()
-  .then(function(devices) {
-    devices.forEach(function(device) {
-      console.log(device.kind + ": " + device.label +
-        " id = " + device.deviceId);
-    });
-  })
-  .catch(function(err) {
-    console.log(err.name + ": " + error.message);
-  });
     // Replace the source of the video element with the stream from the camera
     if (navigator.getUserMedia) {
         navigator.getUserMedia(options, function(stream) {
@@ -76,7 +76,7 @@ navigator.mediaDevices.enumerateDevices()
 })*/
 var cam = null;
 function startReading(){
-    xabc();
+    //xabc();
     
     cam = camera(cam_video_id);
     cam.start();
