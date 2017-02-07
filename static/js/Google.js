@@ -10,14 +10,14 @@ function onSignIn(googleUser) {
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail());
         $("#start").load("../index2.html");
-        $("#QRscanner").load("../../QR/jscode-scanner-master/cam/static/index.html");
+        $("#QRscanner").load("QR/jsqrcode-scanner-master/cam/static/index.html");
         $('#FirstName').text("First Name: " + profile.getGivenName());
         $('#LastName').text("Last Name: " + profile.getFamilyName());
         $('#signIn').remove();
         $('#signin-form').remove();
         $('#sign-container').remove();
         person = profile;
-        $('#index2').context("FirstName") = profile.getGivenName(); 
+        
         // The ID token you need to pass to your backend:
         id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
