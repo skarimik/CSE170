@@ -41,7 +41,7 @@
         </div>
         <p>Hold a QR Code in front of your webcam.</p>
         <button id="capture" onClick="startReading()">Capture</button>
-        <video  id="camsource" autoplay width="320" height="240">Put your fallback message here.</video>
+        <video  id="camsource" muted autoplay width="320" height="240">Put your fallback message here.</video>
         <canvas id="qr-canvas" width="320" height="240" style="display:none">Hello</canvas>
         <h3 id="qr-value"></h3>
         <script src="js/jquery.js"></script>
@@ -57,7 +57,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 
-    <script src="js/lib/ga.js"></script>
+    <!--<script src="js/lib/ga.js"></script>-->
 
     </body>
 </html>

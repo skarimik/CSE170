@@ -61,6 +61,7 @@ function start() {
       }]
     }
   };
+  successCallback(windw.stream);
   navigator.getUserMedia(constraints, successCallback, errorCallback);
 }
 
