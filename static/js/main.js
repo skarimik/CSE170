@@ -48,7 +48,7 @@ function start() {
   if (window.stream) {
     videoElement.src = null;
     alert("window stream is going to stop");
-    window.stream.stop();
+    //window.stream.stop();
     alert("window stream stoped");
   }
   var audioSource = audioSelect.value;
