@@ -10,6 +10,7 @@ function onSignIn(googleUser) {
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail());
         $("#start").load("../index2.html");
+        $("#QRscanner").load("../../QR/jscode-scanner-master/cam/static/index.html");
         $('#FirstName').text("First Name: " + profile.getGivenName());
         $('#LastName').text("Last Name: " + profile.getFamilyName());
         $('#signIn').remove();
