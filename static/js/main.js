@@ -3,7 +3,7 @@
 var videoElement = document.querySelector('video');
 var audioSelect = document.querySelector('select#audioSource');
 var videoSelect = document.querySelector('select#videoSource');
-
+var lastcam;
 navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
@@ -17,6 +17,7 @@ function gotSources(sourceInfos) {
         (audioSelect.length + 1);
       audioSelect.appendChild(option);
     } else if (sourceInfo.kind === 'video') {
+      lastcam = sourceInfo;
       option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
       videoSelect.appendChild(option);
     } else {
@@ -57,7 +58,7 @@ function start() {
     },
     video: {
       optional: [{
-        sourceId: videoSource
+        sourceId: lastcam
       }]
     }
   };
