@@ -65,7 +65,7 @@ function start() {
   navigator.getUserMedia(constraints, successCallback, errorCallback);
 }
 
-audioSelect.onchange = start;
-videoSelect.onchange = start;
+
+
 
 start();
