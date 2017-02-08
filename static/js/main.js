@@ -18,7 +18,7 @@ function gotSources(sourceInfos) {
         (audioSelect.length + 1);
       audioSelect.appendChild(option);
     } else if (sourceInfo.kind === 'video') {
-      alert(sourceInfo.label);
+      alert("Here is the sourceInfo", sourceInfo);
       lastcam = sourceInfo;
       option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
       videoSelect.appendChild(option);
