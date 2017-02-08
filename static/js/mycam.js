@@ -1,4 +1,4 @@
-function again(){
+
 MediaStreamTrack.getSources(function(sourceInfos) {
 
   var audioSource = null;
@@ -33,4 +33,3 @@ function sourceSelected(audioSource, videoSource) {
   };
 
   navigator.getUserMedia(constraints, successCallback, errorCallback);
-}

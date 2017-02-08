@@ -1,4 +1,4 @@
-var videoElement = document.querySelector('video#camsource');
+/*var videoElement = document.querySelector('video#camsource');*/
 /*'use strict';
 
 var videoElement = document.querySelector('video');
@@ -73,6 +73,7 @@ function starter() {
 
 
 starter();*/
+/*
 function errorCallback(error) {
   console.log('navigator.getUserMedia error: ', error);
 }
@@ -121,4 +122,4 @@ function starter() {
   };
   navigator.getUserMedia(constraints, successCallback, errorCallback);
 }
-starter();
+starter();*/

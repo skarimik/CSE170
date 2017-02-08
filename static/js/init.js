@@ -27,7 +27,7 @@ function xabc(){
         return;
     }
 }
-window.addEventListener('DOMContentLoaded', function() {
+/*window.addEventListener('DOMContentLoaded', function() {
     // Assign the <video> element to a variable
     var video = document.getElementById(cam_video_id);
     var options = {
@@ -50,7 +50,7 @@ window.addEventListener('DOMContentLoaded', function() {
         return;
     }
 }, false);
-
+*/
 /*$(document).ready(function() {
     if (!navigator.getUserMedia) return;
     cam = camera(cam_video_id);
