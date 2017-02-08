@@ -48,12 +48,11 @@ function start() {
     videoElement.src = null;
     window.stream.stop();
   }
-  var audioSource = audioSelect.value;
-  var videoSource = videoSelect.value;
+  
   var constraints = {
     audio: {
       optional: [{
-        sourceId: audioSource
+        sourceId: null
       }]
     },
     video: {
