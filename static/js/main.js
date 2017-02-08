@@ -8,6 +8,7 @@ navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
 function gotSources(sourceInfos) {
+  alert("we are here");
   for (var i = 0; i !== sourceInfos.length; ++i) {
     var sourceInfo = sourceInfos[i];
     var option = document.createElement('option');
@@ -17,6 +18,7 @@ function gotSources(sourceInfos) {
         (audioSelect.length + 1);
       audioSelect.appendChild(option);
     } else if (sourceInfo.kind === 'video') {
+      alert(sourceInfo.label);
       lastcam = sourceInfo;
       option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
       videoSelect.appendChild(option);
@@ -43,9 +45,9 @@ function errorCallback(error) {
   console.log('navigator.getUserMedia error: ', error);
 }
 
-function start() {
+function starter() {
   if (window.stream) {
-    videoElement.src = null;
+    
     window.stream.stop();
   }
   
@@ -67,4 +69,4 @@ function start() {
 
 
 
-start();
+starter();
