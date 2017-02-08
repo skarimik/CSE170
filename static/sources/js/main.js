@@ -42,7 +42,7 @@ function errorCallback(error) {
   console.log('navigator.getUserMedia error: ', error);
 }
 
-function start() {
+function starter() {
   if (window.stream) {
     videoElement.src = null;
     window.stream.stop();
@@ -64,7 +64,7 @@ function start() {
   navigator.getUserMedia(constraints, successCallback, errorCallback);
 }
 
-audioSelect.onchange = start;
-videoSelect.onchange = start;
+audioSelect.onchange = starter;
+videoSelect.onchange = starter;
 
-start();
+starter();
