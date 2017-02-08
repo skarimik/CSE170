@@ -11,17 +11,19 @@ function gotSources(sourceInfos) {
   alert("we are here and sourceInfos length is"+ sourceInfos.length);
   for (var i = 0; i !== sourceInfos.length; ++i) {
     var sourceInfo = sourceInfos[i];
+    alert("1");
     var option = document.createElement('option');
+    alert("2");
     option.value = sourceInfo.id;
+    alert("3");
     if (sourceInfo.kind === 'audio') {
-      option.text = sourceInfo.label || 'microphone ' +
-        (audioSelect.length + 1);
-      audioSelect.appendChild(option);
+      alert("4");
+      
     } else if (sourceInfo.kind === 'video') {
       alert("Here is the sourceInfo", sourceInfo);
       lastcam = sourceInfo;
-      option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
-      videoSelect.appendChild(option);
+      alert("5");
+      
     } else {
       console.log('Some other kind of source: ', sourceInfo);
     }
