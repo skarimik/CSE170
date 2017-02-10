@@ -1,0 +1,6 @@
+.DS_Store
+.swp
+*~
+node_modules
+validation-report.json
+validation-status.json

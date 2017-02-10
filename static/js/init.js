@@ -3,17 +3,8 @@
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
 var cam_video_id = "camsource"
-/*
 
 function xabc(){
-
-
-
-
-
-
-
-
      // Assign the <video> element to a variable
     var video = document.getElementById(cam_video_id);
     var options = {
@@ -36,22 +27,13 @@ function xabc(){
         return;
     }
 }
-window.addEventListener('DOMContentLoaded', function() {
-
-
-
-
-
-
-
+/*window.addEventListener('DOMContentLoaded', function() {
     // Assign the <video> element to a variable
     var video = document.getElementById(cam_video_id);
     var options = {
         "audio": false,
         "video": true
-
     };
-
     // Replace the source of the video element with the stream from the camera
     if (navigator.getUserMedia) {
         navigator.getUserMedia(options, function(stream) {
@@ -68,7 +50,7 @@ window.addEventListener('DOMContentLoaded', function() {
         return;
     }
 }, false);
-
+*/
 /*$(document).ready(function() {
     if (!navigator.getUserMedia) return;
     cam = camera(cam_video_id);
@@ -76,7 +58,7 @@ window.addEventListener('DOMContentLoaded', function() {
 })*/
 var cam = null;
 function startReading(){
-    //xabc();
+    xabc();
     
     cam = camera(cam_video_id);
     cam.start();
