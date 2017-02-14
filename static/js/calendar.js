@@ -1,3 +1,4 @@
+
 var event = {
   'summary': 'Google I/O 2015',
   'location': '800 Howard St., San Francisco, CA 94103',
@@ -25,14 +26,14 @@ var event = {
     ]
   }
 };
-
+alert("Before the request!");
 var request = gapi.client.calendar.events.insert({
 
   'calendarId': 'primary',
   'resource': event
 });
-console.log("after the request is aasigned request is:"+request);
+alert("after the request is aasigned request is:"+request);
 request.execute(function(event) {
-  console.log("we are trying to add event here");
+  alert("we are trying to add event here");
   appendPre('Event created: ' + event.htmlLink);
 });
