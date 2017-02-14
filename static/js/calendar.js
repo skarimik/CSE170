@@ -27,10 +27,12 @@ var event = {
 };
 
 var request = gapi.client.calendar.events.insert({
+
   'calendarId': 'primary',
   'resource': event
 });
-
+console.log("after the request is aasigned request is:"+request);
 request.execute(function(event) {
+  console.log("we are trying to add event here");
   appendPre('Event created: ' + event.htmlLink);
 });
