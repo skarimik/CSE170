@@ -1,6 +1,12 @@
 function onCalling(){
 
 var client = '353317309491-vkamti6jshvv4l1ucp3i6jbs1rn7mthm.apps.googleusercontent.com';
+// Array of API discovery doc URLs for APIs used by the quickstart
+var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+
+// Authorization scopes required by the API; multiple scopes can be
+// included, separated by spaces.
+var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 gapi.load('client:auth2', initClient);
 /**
  *  Initializes the API client library and sets up sign-in state
@@ -9,7 +15,7 @@ gapi.load('client:auth2', initClient);
 function initClient() {
   gapi.client.init({
     discoveryDocs: DISCOVERY_DOCS,
-    clientId: CLIENT_ID,
+    clientId: CLIENT_ID,  
     scope: SCOPES
   });
 }
