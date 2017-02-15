@@ -5,7 +5,7 @@ var scopes = 'https://www.googleapis.com/auth/calendar';
 function handleClientLoad() {
   gapi.client.setApiKey(apiKey);
   window.setTimeout(checkAuth,1);
-  checkAuth();
+  //checkAuth();
 }
 
 function checkAuth() {
