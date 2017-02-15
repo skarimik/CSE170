@@ -1,4 +1,4 @@
-function onCalling(){
+
 
 
 var event = {
@@ -123,15 +123,3 @@ function listUpcomingEvents() {
 
 
 
-
-
-
-//*********************************************************
-alert("Before the request!");
-var request = 
-alert("after the request is aasigned request is:"+request);
-request.execute(function(event) {
-  alert("we are trying to add event here");
-  appendPre('Event created: ' + event.htmlLink);
-});
-}
