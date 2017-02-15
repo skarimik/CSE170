@@ -32,16 +32,16 @@ function handleAuthClick(event) {
 }
 function makeApiCall() {
      var event = {
-"summary":"Here",
+"summary":"Here is my amazing date",
 "description":"Now",
 "start":
 {
-"dateTime":"2016-04-21T12:00:00.000-07:00",
+"dateTime":"2017-11-01T12:00:00.000-07:00",
 "timeZone":"America/Los_Angeles"
 }
 ,"end":
 {
-"dateTime":"2016-04-21T12:30:00.000-07:00",
+"dateTime":"2017-11-01T01:30:00.000-07:00",
 "timeZone":"America/Los_Angeles"
 }
 };
@@ -52,6 +52,7 @@ function makeApiCall() {
     });
           
     request.execute(function(event) {
+      alert("event added successfully");
       appendPre('Event created: '+event.htmlLink);
     });
   });
