@@ -74,10 +74,10 @@ function initClient() {
 */
 function updateSigninStatus(isSignedIn) {
   if (isSignedIn) {
-    alarm("you are signed in");
+    alert("you are signed in");
     listUpcomingEvents();
   } else {
-    alarm("you are not signed in");
+    alert("you are not signed in");
   }
 }
 
