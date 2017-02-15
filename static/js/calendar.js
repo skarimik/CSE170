@@ -53,7 +53,7 @@ function makeApiCall() {
           
     request.execute(function(event) {
       alert("event added successfully");
-      appendPre('Event created: '+event.htmlLink);
+      
     });
   });
 }
