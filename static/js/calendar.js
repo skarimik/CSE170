@@ -31,17 +31,28 @@ function handleAuthClick(event) {
   return false;
 }
 function makeApiCall() {
+     var event = {
+"summary":"Here"
+"description":"Now"
+"start":
+{
+"dateTime":"2016-04-21T12:00:00.000-07:00"
+"timeZone":"America/Los_Angeles"
+}
+"end":
+{
+"dateTime":"2016-04-21T12:30:00.000-07:00"
+"timeZone":"America/Los_Angeles"
+}
+};
   gapi.client.load('calendar', 'v3', function() {
-    var request = gapi.client.calendar.events.list({
+    var request = gapi.client.calendar.events.insert({
       'calendarId': 'primary'
+      'resource': event
     });
           
-    request.execute(function(resp) {
-      for (var i = 0; i < resp.items.length; i++) {
-        var li = document.createElement('li');
-        li.appendChild(document.createTextNode(resp.items[i].summary));
-        document.getElementById('events').appendChild(li);
-      }
+    request.execute(function(event) {
+      appendPre('Event created: '+event.htmlLink);
     });
   });
 }
