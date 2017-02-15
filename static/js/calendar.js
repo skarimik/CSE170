@@ -36,23 +36,23 @@ function makeApiCall() {
 "description":"Now",
 "start":
 {
-"dateTime":"2016-04-21T12:00:00.000-07:00",
+"dateTime":"2017-11-01T12:00:00.000-07:00",
 "timeZone":"America/Los_Angeles"
 }
 ,"end":
 {
-"dateTime":"2016-04-21T12:30:00.000-07:00",
+"dateTime":"2017-11-01T1:30:00.000-07:00",
 "timeZone":"America/Los_Angeles"
 }
 };
   gapi.client.load('calendar', 'v3', function() {
     var request = gapi.client.calendar.events.insert({
-      'calendarId': 'primary',
+      'calendarId': 'primary',          
       'resource': event
     });
           
     request.execute(function(event) {
-      appendPre('Event created: '+event.htmlLink);
+     alert("Event "+event+" was added.");
     });
   });
 }
