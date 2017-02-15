@@ -428,6 +428,19 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <h2>Project Title</h2>
+<div id='content'>
+      <h1>Events</h1>
+      <ul id='events'></ul>
+    </div>
+    <a href='#' id='authorize-button' onclick='handleAuthClick();'>Login</a>
+    
+  
+    
+
+
+
+
+
                                                             
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
@@ -584,7 +597,7 @@
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
+    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
     <!-- Contact Form JavaScript -->
     <script src="./start/js/jqBootstrapValidation.js"></script>
    <!--For contacting <script src="./start/js/contact_me.js"></script>-->
@@ -594,8 +607,7 @@
    <!--  <script src="./start/js/freelancer.min.js"></script>-->
     <script src="./js/Google.js"></script>
      <script src="js/calendar.js"></script>
-     <script async defer src="https://apis.google.com/js/api.js" 
-    onload="this.onload=function(){};handleClientLoad()" </script>
+
     <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
