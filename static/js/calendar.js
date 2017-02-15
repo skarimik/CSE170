@@ -32,16 +32,16 @@ function handleAuthClick(event) {
 }
 function makeApiCall() {
      var event = {
-"summary":"Here"
-"description":"Now"
+"summary":"Here",
+"description":"Now",
 "start":
 {
-"dateTime":"2016-04-21T12:00:00.000-07:00"
+"dateTime":"2016-04-21T12:00:00.000-07:00",
 "timeZone":"America/Los_Angeles"
 }
-"end":
+,"end":
 {
-"dateTime":"2016-04-21T12:30:00.000-07:00"
+"dateTime":"2016-04-21T12:30:00.000-07:00",
 "timeZone":"America/Los_Angeles"
 }
 };
