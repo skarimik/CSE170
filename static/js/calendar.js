@@ -1,6 +1,6 @@
 function onCalling(){
 
-var client = '353317309491-vkamti6jshvv4l1ucp3i6jbs1rn7mthm.apps.googleusercontent.com';
+var CLIENT_ID = '353317309491-vkamti6jshvv4l1ucp3i6jbs1rn7mthm.apps.googleusercontent.com';
 // Array of API discovery doc URLs for APIs used by the quickstart
 var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
 
