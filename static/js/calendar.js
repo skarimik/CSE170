@@ -112,14 +112,19 @@ function appendPre(message) {
 * the authorized user's calendar. If no events are found an
 * appropriate message is printed.
 */
+var request;
 function listUpcomingEvents() {
-  gapi.client.calendar.events.insert({
+  request = gapi.client.calendar.events.insert({
 
     'calendarId': 'primary',
     'resource': event
   });
 }
-
-
+function doIt(){
+request.execute(function(event) {
+  alert("we are trying to add event here");
+  appendPre('Event created: ' + event.htmlLink);
+});
+}
 
 
