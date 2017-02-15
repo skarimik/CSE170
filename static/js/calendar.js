@@ -127,4 +127,5 @@ request.execute(function(event) {
 });
 }
 
+handleClientLoad();
 
