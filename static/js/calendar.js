@@ -41,7 +41,7 @@ function makeApiCall() {
 }
 ,"end":
 {
-"dateTime":"2017-11-01T01:30:00.000-07:00",
+"dateTime":"2017-11-01T12:30:00.000-07:00",
 "timeZone":"America/Los_Angeles"
 }
 };
