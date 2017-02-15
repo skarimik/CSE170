@@ -47,7 +47,7 @@ function makeApiCall() {
 };
   gapi.client.load('calendar', 'v3', function() {
     var request = gapi.client.calendar.events.insert({
-      'calendarId': 'primary'
+      'calendarId': 'primary',
       'resource': event
     });
           
