@@ -3,7 +3,7 @@ var clientId = '353317309491-3ed3on54tpim02gc5sg7tt8njnfi24gs.apps.googleusercon
 var scopes = 'https://www.googleapis.com/auth/calendar';
 
 function handleClientLoad() {
-  gapi.client.setApiKey(apiKey);
+  //gapi.client.setApiKey(apiKey);
   window.setTimeout(checkAuth,1);
   //checkAuth();
 }
