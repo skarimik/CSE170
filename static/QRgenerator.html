@@ -20,6 +20,9 @@
     </head>
 
     <body>
+     <script type="text/javascript" src="js/jquery.qrcode.js"></script>
+        <script type="text/javascript" src="js/qrcode.js"></script>
+        <script type="text/javascript" src="js/eventgenerator.js"></script>
         <h2>Create QR</h2>
         <h3><small>add your event details below</small></h3>
         <div id='qrcontent'>
@@ -69,20 +72,20 @@
                     </div>
                     <!-- Calendar/time script -->
                     <script type="text/javascript">
-                        $(function() {
-                            $('#datetimepicker6').datetimepicker();
-                            $('#datetimepicker7').datetimepicker({
-                                 useCurrent: false //Important! See issue #1075
-                            });
-                            $("#datetimepicker6").on("dp.change", function(e) {
-                            $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+                       // $(function() {
+                        //     $('#datetimepicker6').datetimepicker();
+                        //     $('#datetimepicker7').datetimepicker({
+                        //          useCurrent: false //Important! See issue #1075
+                        //     });
+                        //     $("#datetimepicker6").on("dp.change", function(e) {
+                        //     $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
                            
-                             });
-                            $("#datetimepicker7").on("dp.change", function(e) {
-                            $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+                        //      });
+                        //     $("#datetimepicker7").on("dp.change", function(e) {
+                        //     $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
                            
-                             });
-                        });
+                        //      });
+                        // });
                     </script>
 
                     <!-- Location -->
@@ -184,5 +187,8 @@
             </form>
         </div>
         <br>
+         <script type="text/javascript" src="js/jquery.qrcode.js"></script>
+        <script type="text/javascript" src="js/qrcode.js"></script>
+        <script type="text/javascript" src="js/eventgenerator.js"></script>
     </body> 
  </html>
