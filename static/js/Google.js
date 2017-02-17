@@ -1,6 +1,7 @@
 var person;
 var id_token;
 
+
 function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
@@ -12,6 +13,7 @@ function onSignIn(googleUser) {
         console.log("Email: " + profile.getEmail());
         $("#start").load("../index2.html",function(){
         $("#QRscanner").load("../cam.html");
+        $("#QRgenerator").load("../QRgenerator.html");
 
         });
         

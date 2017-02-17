@@ -1,4 +1,4 @@
-// var clientId = '353317309491-3ed3on54tpim02gc5sg7tt8njnfi24gs.apps.googleusercontent.com';
+var clientId = '353317309491-3ed3on54tpim02gc5sg7tt8njnfi24gs.apps.googleusercontent.com';
 // //var apiKey = 'AIzaSyAfF8MHYCh7ZVo189HR9MyQ6NOjK4J88Ck';
 var scopes = 'https://www.googleapis.com/auth/calendar';
 
@@ -9,7 +9,7 @@ function handleClientLoad() {
 }
 
 function checkAuth() {
-  gapi.auth.authorize({client_id:'CLIENT_ID.apps.googleusercontent.com', scope: scopes, immediate: true},
+  gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},
       handleAuthResult);
 }
 
