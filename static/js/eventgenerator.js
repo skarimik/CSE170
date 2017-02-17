@@ -44,8 +44,8 @@ function initializePage() {
 function generateQR(e) {
     e.preventDefault();
     var qrcodeTitle = $('#event_title').val();
-    var qrcodeStartTime = $('#datetimepicker6').val();
-    var qrcodeEndTime = $('#datetimepicker7').val();
+   // var qrcodeStartTime = $('#datetimepicker6').val();
+   // var qrcodeEndTime = $('#datetimepicker7').val();
     var qrcodeLocation = $('#event_location').val();
     var qrcodeDescripion = $('#event_description').val();
     var qrcodeURL = $('#event_URL').val();
