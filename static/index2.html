@@ -26,7 +26,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
     <!-- include Bootstrap DateTimePicker CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    
+
 
 
     <!-- Custom Fonts -->
@@ -80,7 +80,7 @@
                 <li class="sidebar-brand">
                     <a id="FirstName" href="#"></a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">Scan</a>
                 </li>
 
@@ -93,10 +93,15 @@
 
                 <li>
                     <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">Create New</a>
-                </li>
+                </li> -->
                 <li>
-                    <a href='#' id='authorize-button'>Login</a>
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">Help</a>
                 </li>
+
+                <li>
+                    <a href='#' id='authorize-button'>Log Out</a>
+                </li>
+
             </ul>
         </div>
 
@@ -464,9 +469,7 @@
                         <div class="modal-body">
                             <h2>Project Title</h2>
                             <!-- <div class="embed-responsive embed-responsive-16by9">
-
                                 <iframe src="https://calendar.google.com/calendar/embed?src=ucsd.edu_rq3g476fs5rop7n0f9949vj304%40group.calendar.google.com&ctz=America/Los_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-
                             </div> -->
                             <div id="QRcalendar"></div>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
@@ -475,8 +478,64 @@
                 </div>
             </div>
         </div>
+    </div>
+    <!-- HELP POPUP -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- <header> -->
+                            <h1>Help</h1>
 
-        <!-- REMOVE THIS
+                            <article>
+                                <h3>About</h3>
+                                <p>Event Queuer is an open source project designed to simplify the daily routines of all kinds of individuals. It is based around the concept of simplyfying the way that people schedule events. The use of fliers and bulletin
+                                    boards to showcase events is very common in many comunities. When passing by these event fliers, many people simply glance over the event and proceed with their day because of responsibilities like being on time to
+                                    work or class. Even if they see an event that they want to attend, it's quite tedius to input all of the details onto their phone, then schedule it into their personal calendar. Some individuals don't even bother, instead
+                                    prefering to make a mental note; unfortunately, many, ourselves included, simply forget.</p>
+                                <p>Event Queuer is a solution to this user need. With this free and simple web based application, event organizers can generate a QR code that contains information, like time, date, and description, about their event. Then
+                                    they are able to put this QR code on their fliers. The other user base, the general population, can use this app to scan the QR code of events and all of the information registered into that QR code will be automatically
+                                    synced into their Google Calendar. This way people can save time and be more organized!
+                                </p>
+                            </article>
+
+                            <article>
+                                <h3>How To</h3>
+                                <p>Once signed in, the application presents the user with three main functions laid out on the screen. The user can scroll up and down the page to access these functions. The first icon, the cell phone, symbolizes the scanning
+                                    feature. When the user clicks on it, they are prompted to use their camera to scan an available QR code. Once scanned, the application will interpret the QR code and integrate the information into the users calendar.</p>
+                                <p>The second feature, represented by the QR icon, allows the user to generate a QR code for their specified event. The user will be prompted to input information like event title, time, date, location, and discription. After
+                                    they press generate QR, the interface will present a QR code and the user will be able to screenshot or save the image to their phone. After that, the user can print these codes onto their fliers so others can easily
+                                    keep track of the event.</p>
+                                <p>The third feature, represented by the calendar icon, is a quick shortcut to the users Google Calendar information. The user can see all of their past and upcoming events in a simple and clean interface.
+                            </article>
+
+                            <article>
+                                <h3>Common Errors</h3>
+                                <h5>Unable to see Google Calendar:</h5>
+                                <p>Press the 3 dash menu icon on the top right of the home page. They you will be prompted with multiple options through a sidebar menu. Click log out, then refresh the page and log back in.</p>
+                                <h5>QR event is not syncing to calendar:</h5>
+                                <p>There are a variety of QR codes that do many different things. Some load webpages and others open up different applications. If scanning an arbitrary QR code, and prompted with a error saying that the QR is incompatible,
+                                    it means that the QR code wasn't generated by Event Queuer, and is theerefore incompatible.</p>
+                                <h5>Unable to scan:</h5>
+                                <p>Make sure you are on a mobile device and either using Google Chrome, Firefox, or Safari as the browser. Many third party browsers like Opera doesn't contain the proper API to run this web based application.</p>
+                            </article>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Back</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- REMOVE THIS
     <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
@@ -590,39 +649,39 @@
     </div>
 -->
 
-        <!-- jQuery -->
-        <script src="./start/vendor/jquery/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="./start/vendor/jquery/jquery.min.js"></script>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="./start/vendor/bootstrap/js/bootstrap.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./start/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
-        <!-- Plugin JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-        <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
-        <!-- Contact Form JavaScript -->
-        <script src="./start/js/jqBootstrapValidation.js"></script>
-        <!--For contacting <script src="./start/js/contact_me.js"></script>-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://code.jquery.com/jquery.js"></script>
-        <!-- Theme JavaScript -->
-        <!--  <script src="./start/js/freelancer.min.js"></script>-->
-        <script src="./js/Google.js"></script>
-        <script src="js/calendar.js"></script>
-
-       
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+    <!-- Contact Form JavaScript -->
+    <script src="./start/js/jqBootstrapValidation.js"></script>
+    <!--For contacting <script src="./start/js/contact_me.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Theme JavaScript -->
+    <!--  <script src="./start/js/freelancer.min.js"></script>-->
+    <script src="./js/Google.js"></script>
+    <script src="js/calendar.js"></script>
 
 
-        <script>
-            $("#menu-toggle").click(function(e) {
-                e.preventDefault();
-                $("#wrapper").toggleClass("toggled");
 
-            });
-        </script>
-        <script>
-            $(document).ready(settingUp());
-        </script>
+
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+
+        });
+    </script>
+    <script>
+        $(document).ready(settingUp());
+    </script>
 
 </body>
 
