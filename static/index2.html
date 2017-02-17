@@ -427,7 +427,6 @@
                         <div class="modal-body">
                             <div id="QRscanner">
                             </div>
-
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
@@ -493,40 +492,43 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <!-- <header> -->
-                            <h1>Help</h1>
+                            <h2><b>Help</b></h2>
+                            <div align="justify">
+                                <article>
+                                    <h1>About</h1>
+                                    <p>Event Queuer is an open source project designed to simplify the daily routines of all kinds of individuals. It is based around the concept of simplyfying the way that people schedule events. The use of fliers and bulletin
+                                        boards to showcase events is very common in many comunities. When passing by these event fliers, many people simply glance over the event and proceed with their day because of responsibilities like being on time
+                                        to work or class. Even if they see an event that they want to attend, it's quite tedius to input all of the details onto their phone, then schedule it into their personal calendar. Some individuals don't even bother,
+                                        instead prefering to make a mental note; unfortunately, many, ourselves included, simply forget.</p>
+                                    <p>Event Queuer is a solution to this user need. With this free and simple web based application, event organizers can generate a QR code that contains information, like time, date, and description, about their event.
+                                        Then they are able to put this QR code on their fliers. The other user base, the general population, can use this app to scan the QR code of events and all of the information registered into that QR code will be
+                                        automatically synced into their Google Calendar. This way people can save time and be more organized!
+                                    </p>
+                                </article>
 
-                            <article>
-                                <h3>About</h3>
-                                <p>Event Queuer is an open source project designed to simplify the daily routines of all kinds of individuals. It is based around the concept of simplyfying the way that people schedule events. The use of fliers and bulletin
-                                    boards to showcase events is very common in many comunities. When passing by these event fliers, many people simply glance over the event and proceed with their day because of responsibilities like being on time to
-                                    work or class. Even if they see an event that they want to attend, it's quite tedius to input all of the details onto their phone, then schedule it into their personal calendar. Some individuals don't even bother, instead
-                                    prefering to make a mental note; unfortunately, many, ourselves included, simply forget.</p>
-                                <p>Event Queuer is a solution to this user need. With this free and simple web based application, event organizers can generate a QR code that contains information, like time, date, and description, about their event. Then
-                                    they are able to put this QR code on their fliers. The other user base, the general population, can use this app to scan the QR code of events and all of the information registered into that QR code will be automatically
-                                    synced into their Google Calendar. This way people can save time and be more organized!
-                                </p>
-                            </article>
+                                <article>
+                                    <h1>How To</h1>
+                                    <p>Once signed in, the application presents the user with three main functions laid out on the screen. The user can scroll up and down the page to access these functions. The first icon, the cell phone, symbolizes the
+                                        scanning feature. When the user clicks on it, they are prompted to use their camera to scan an available QR code. Once scanned, the application will interpret the QR code and integrate the information into the users
+                                        calendar.
+                                    </p>
+                                    <p>The second feature, represented by the QR icon, allows the user to generate a QR code for their specified event. The user will be prompted to input information like event title, time, date, location, and discription.
+                                        After they press generate QR, the interface will present a QR code and the user will be able to screenshot or save the image to their phone. After that, the user can print these codes onto their fliers so others
+                                        can easily keep track of the event.</p>
+                                    <p>The third feature, represented by the calendar icon, is a quick shortcut to the users Google Calendar information. The user can see all of their past and upcoming events in a simple and clean interface.
+                                </article>
 
-                            <article>
-                                <h3>How To</h3>
-                                <p>Once signed in, the application presents the user with three main functions laid out on the screen. The user can scroll up and down the page to access these functions. The first icon, the cell phone, symbolizes the scanning
-                                    feature. When the user clicks on it, they are prompted to use their camera to scan an available QR code. Once scanned, the application will interpret the QR code and integrate the information into the users calendar.</p>
-                                <p>The second feature, represented by the QR icon, allows the user to generate a QR code for their specified event. The user will be prompted to input information like event title, time, date, location, and discription. After
-                                    they press generate QR, the interface will present a QR code and the user will be able to screenshot or save the image to their phone. After that, the user can print these codes onto their fliers so others can easily
-                                    keep track of the event.</p>
-                                <p>The third feature, represented by the calendar icon, is a quick shortcut to the users Google Calendar information. The user can see all of their past and upcoming events in a simple and clean interface.
-                            </article>
-
-                            <article>
-                                <h3>Common Errors</h3>
-                                <h5>Unable to see Google Calendar:</h5>
-                                <p>Press the 3 dash menu icon on the top right of the home page. They you will be prompted with multiple options through a sidebar menu. Click log out, then refresh the page and log back in.</p>
-                                <h5>QR event is not syncing to calendar:</h5>
-                                <p>There are a variety of QR codes that do many different things. Some load webpages and others open up different applications. If scanning an arbitrary QR code, and prompted with a error saying that the QR is incompatible,
-                                    it means that the QR code wasn't generated by Event Queuer, and is theerefore incompatible.</p>
-                                <h5>Unable to scan:</h5>
-                                <p>Make sure you are on a mobile device and either using Google Chrome, Firefox, or Safari as the browser. Many third party browsers like Opera doesn't contain the proper API to run this web based application.</p>
-                            </article>
+                                <article>
+                                    <h1>Common Errors</h1>
+                                    <h4><b>Google Calendar not working:</b></h4>
+                                    <p>Press the 3 dash menu icon on the top right of the home page. They you will be prompted with multiple options through a sidebar menu. Click log out, then refresh the page and log back in.</p>
+                                    <h4><b>Not syncing to calendar:</b></h4>
+                                    <p>There are a variety of QR codes that do many different things. Some load webpages and others open up different applications. If scanning an arbitrary QR code, and prompted with a error saying that the QR is incompatible,
+                                        it means that the QR code wasn't generated by Event Queuer, and is theerefore incompatible.</p>
+                                    <h4><b>Unable to scan:</b></h4>
+                                    <p>Make sure you are on a mobile device and either using Google Chrome, Firefox, or Safari as the browser. Many third party browsers like Opera doesn't contain the proper API to run this web based application.</p>
+                                </article>
+                            </div>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Back</button>
                         </div>
                     </div>
