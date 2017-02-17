@@ -64,10 +64,12 @@
       function updateSigninStatus(isSignedIn) {
         alert("update sign in status");
         if (isSignedIn) {
+          alert("in if");
           authorizeButton.style.display = 'none';
           signoutButton.style.display = 'block';
           listUpcomingEvents();
         } else {
+            alert("in else");
           authorizeButton.style.display = 'block';
           signoutButton.style.display = 'none';
         }
