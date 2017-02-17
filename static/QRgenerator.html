@@ -18,171 +18,169 @@
         <script type="text/javascript" src="js/eventgenerator.js"></script>
 
     </head>
+        <body>
+                <h2>Create QR</h2>
+                            <h3><small>add your event details below</small></h3>
+                            <div id='qrcontent'>
+                                <!-- add Title text, date/time selector, location, description, url -->
+                                <form class="form-horizontal">
+                                    <div class="container">
+                                        <!-- Event title -->
+                                        <div class="container">
+                                            <div class="form-group">
+                                                <div class='col-md-5'>
+                                                    <label for="event_title">Title:</label>
+                                                    <input type="event_title" class="form-control" id="event_title" placeholder="your event title">
+                                                </div>
+                                            </div>
+                                        </div>
 
-    <body>
-        <h2>Create QR</h2>
-        <h3><small>add your event details below</small></h3>
-        <div id='qrcontent'>
-            <!-- add Title text, date/time selector, location, description, url -->
-            <form class="form-horizontal">
-                <div class="container">
-                    <!-- Event title -->
-                    <div class="container">
-                        <div class="form-group">
-                            <div class='col-md-5'>
-                                <label for="event_title">Title:</label>
-                                <input type="event_title" class="form-control" id="event_title" placeholder="your event title">
+                                        <!-- CALENDAR/TIME SELECTOR -->
+                                        <div class="container">
+                                            <!-- Event Start  -->
+                                            <div class='col-md-4'>
+                                                <div class="form-group">
+                                                    <label for="datetimepicker6">Select start:</label>
+                                                    <div class='input-group date' id='datetimepicker6'>
+                                                        <input type='text' class="form-control" placeholder="start time" />
+                                                        <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar">
+                                                </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="container">
+                                            <!-- Event End -->
+                                            <div class='col-md-4'>
+                                                <div class="form-group">
+                                                    <label for="datetimepicker7">Select end:</label>
+                                                    <div class='input-group date' id='datetimepicker7'>
+                                                        <input type='text' class="form-control" placeholder="end time" />
+                                                        <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar">
+                                                </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Calendar/time script -->
+                                        <script type="text/javascript">
+                                            $(function() {
+                                                $('#datetimepicker6').datetimepicker();
+                                                $('#datetimepicker7').datetimepicker({
+                                                     useCurrent: false //Important! See issue #1075
+                                                });
+                                                $("#datetimepicker6").on("dp.change", function(e) {
+                                                $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+                                               
+                                                 });
+                                                $("#datetimepicker7").on("dp.change", function(e) {
+                                                $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+                                               
+                                                 });
+                                            });
+                                        </script>
+
+                                        <!-- Location -->
+                                        <div class="container">
+                                            <div class="form-group">
+                                                <div class='col-md-5'>
+                                                    <label for="event_location">Location:</label>
+                                                    <input type="event_location" class="form-control" id="event_location" placeholder="whereabouts...">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Description -->
+                                        <div class="container">
+                                            <div class="form-group">
+                                                <div class='col-md-5'>
+                                                    <label for="event_description">Description:</label>
+                                                    <input type="event_description" class="form-control" id="event_description" placeholder="description...">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- URL -->
+                                        <div class="container">
+                                            <label for="event_url" class="control-label col-md-5">Website:</label>
+                                            <div class="input-group col-md-5">
+                                                    <span class="input-group-addon">http://</span>
+                                                    <input type="text" class="form-control" id="event_url" placeholder="yoursite.com" />
+                                                    <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-globe"></span>
+                                                    </span>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <br>
+
+                                        <!-- Generate QR button -->
+                                        <div class="container">
+                                            <div class="form-group">
+                                                <div class='col-md-5'>
+                                                    <div style="text-align: center;">
+                                                        <style>
+                                                            .generate_button {
+                                                                display: inline-block;
+                                                                border-radius: 4px;
+                                                                background-color: #66B3FF;
+                                                                border: none;
+                                                                color: #FFFFFF;
+                                                                text-align: center;
+                                                                font-size: 28px;
+                                                                padding: 20px;
+                                                                width: 200px;
+                                                                transition: all 0.5s;
+                                                                cursor: pointer;
+                                                                margin: 5px;
+                                                            }
+
+                                                            .generate_button span {
+                                                                cursor: pointer;
+                                                                display: inline-block;
+                                                                position: relative;
+                                                                transition: 0.5s;
+                                                            }
+
+                                                            .generate_button span:after {
+                                                                content: '\00bb';
+                                                                position: absolute;
+                                                                opacity: 0;
+                                                                top: 0;
+                                                                right: -20px;
+                                                                transition: 0.5s;
+                                                            }
+
+                                                            .generate_button:hover span {
+                                                                padding-right: 25px;
+                                                            }
+
+                                                            .generate_button:hover span:after {
+                                                                opacity: 1;
+                                                                right: 0;
+                                                            }
+                                                        </style>
+                                                        <button class="generate_button" onclick="alert('Generating QR...')" style="vertical-align:middle"><span>Create QR</span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- (GENERATED) QR CODE -->
+                                        <div id="generatedQRcode">
+                                        <!-- <script>
+                                        jQuery("#generatedQRcode").qrcode({width: 150, height: 150, text:"sample qr code"});
+                                        </script> -->
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- CALENDAR/TIME SELECTOR -->
-                    <div class="container">
-                        <!-- Event Start  -->
-                        <div class='col-md-4'>
-                            <div class="form-group">
-                                <label for="datetimepicker6">Select start:</label>
-                                <div class='input-group date' id='datetimepicker6'>
-                                    <input type='text' class="form-control" placeholder="start time" />
-                                    <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar">
-                            </span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <!-- Event End -->
-                        <div class='col-md-4'>
-                            <div class="form-group">
-                                <label for="datetimepicker7">Select end:</label>
-                                <div class='input-group date' id='datetimepicker7'>
-                                    <input type='text' class="form-control" placeholder="end time" />
-                                    <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar">
-                            </span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Calendar/time script -->
-                    <script type="text/javascript">
-                       // $(function() {
-                        //     $('#datetimepicker6').datetimepicker();
-                        //     $('#datetimepicker7').datetimepicker({
-                        //          useCurrent: false //Important! See issue #1075
-                        //     });
-                        //     $("#datetimepicker6").on("dp.change", function(e) {
-                        //     $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
-                           
-                        //      });
-                        //     $("#datetimepicker7").on("dp.change", function(e) {
-                        //     $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
-                           
-                        //      });
-                        // });
-                    </script>
-
-                    <!-- Location -->
-                    <div class="container">
-                        <div class="form-group">
-                            <div class='col-md-5'>
-                                <label for="event_location">Location:</label>
-                                <input type="event_location" class="form-control" id="event_location" placeholder="whereabouts...">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Description -->
-                    <div class="container">
-                        <div class="form-group">
-                            <div class='col-md-5'>
-                                <label for="event_description">Description:</label>
-                                <input type="event_description" class="form-control" id="event_description" placeholder="description...">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- URL -->
-                    <div class="container">
-                        <label for="event_url" class="control-label col-md-5">Website:</label>
-                        <div class="input-group col-md-5">
-                                <span class="input-group-addon">http://</span>
-                                <input type="text" class="form-control" id="event_url" placeholder="yoursite.com" />
-                                <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-globe"></span>
-                                </span>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-
-                    <!-- Generate QR button -->
-                    <div class="container">
-                        <div class="form-group">
-                            <div class='col-md-5'>
-                                <div style="text-align: center;">
-                                    <style>
-                                        .generate_button {
-                                            display: inline-block;
-                                            border-radius: 4px;
-                                            background-color: #66B3FF;
-                                            border: none;
-                                            color: #FFFFFF;
-                                            text-align: center;
-                                            font-size: 28px;
-                                            padding: 20px;
-                                            width: 200px;
-                                            transition: all 0.5s;
-                                            cursor: pointer;
-                                            margin: 5px;
-                                        }
-
-                                        .generate_button span {
-                                            cursor: pointer;
-                                            display: inline-block;
-                                            position: relative;
-                                            transition: 0.5s;
-                                        }
-
-                                        .generate_button span:after {
-                                            content: '\00bb';
-                                            position: absolute;
-                                            opacity: 0;
-                                            top: 0;
-                                            right: -20px;
-                                            transition: 0.5s;
-                                        }
-
-                                        .generate_button:hover span {
-                                            padding-right: 25px;
-                                        }
-
-                                        .generate_button:hover span:after {
-                                            opacity: 1;
-                                            right: 0;
-                                        }
-                                    </style>
-                                   <button class="generate_button" id="qrButton" onclick="alert('Generating QR...')" style="vertical-align:middle">
-                                    <span>Create</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- (GENERATED) QR CODE -->
-                    <div id="generatedQRcode" img src="">
-                    <!-- <script>
-                    jQuery("#generatedQRcode").qrcode({width: 150, height: 150, text:"sample qr code"});
-                    </script> -->
-                    </div>
-                </div>
-            </form>
-        </div>
-        <br>
-    </body> 
- </html>
+                            <br>
+        </body>
+    
+</html>
