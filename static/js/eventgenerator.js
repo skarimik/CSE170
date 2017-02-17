@@ -54,7 +54,7 @@ function generateQR(e) {
     var qrcodeFullText = qrcodeTitle + '%'
         + '%' + qrcodeLocation + '%' + qrcodeDescripion + '%' + qrcodeURL;
 
-    var qrcodeImage = jquery('#generatedQRcode').qrcode({width: 150, height: 150, text:qrcodeFullText});
+    var qrcodeImage = $('#generatedQRcode').qrcode({width: 150, height: 150, text:qrcodeFullText});
     $('#generatedQRcode:').prepend($('img')).attr('src', qrcodeImage);
 }
 
