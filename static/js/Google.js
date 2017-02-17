@@ -14,6 +14,7 @@ function onSignIn(googleUser) {
         $("#start").load("../index2.html",function(){
         $("#QRscanner").load("../cam.html");
         $("#QRgenerator").load("../QRgenerator.html");
+        $("#QRcalendar").load("../i.html");
 
         });
         
