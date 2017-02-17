@@ -77,17 +77,17 @@
 			<!-- Calendar/time script -->
 			<script type="text/javascript">
 				$(function() {
-					$('#datetimepicker6').datetimepicker();
-					$('#datetimepicker7').datetimepicker({
+					$('#datetimepicker6').datepicker();
+					$('#datetimepicker7').datepicker({
 						useCurrent: false //Important! See issue #1075
 					});
 					$("#datetimepicker6").on("dp.change", function(e) {
-						$('#datetimepicker7').data("DateTimePicker").minDate(e.date);
-						$('#datetimepicker7').data("DateTimePicker").minTime(e.date);
+						$('#datetimepicker7').data("DatePicker").minDate(e.date);
+						$('#datetimepicker7').data("DatePicker").minTime(e.date);
 					});
 					$("#datetimepicker7").on("dp.change", function(e) {
-						$('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
-						$('#datetimepicker6').data("DateTimePicker").maxTime(e.date);
+						$('#datetimepicker6').data("DatePicker").maxDate(e.date);
+						$('#datetimepicker6').data("DatePicker").maxTime(e.date);
 					});
 				});
 			</script>
