@@ -11,7 +11,7 @@
     <button id="authorize-button" style="display: none;">Authorize</button>
     <button id="signout-button" style="display: none;">Sign Out</button>
 
-    <pre id="Ihtmlcontent"></pre>
+    <pre id="content"></pre>
 
     <script type="text/javascript">
       // Client ID and API key from the Developer Console
@@ -90,7 +90,7 @@
        * @param {string} message Text to be placed in pre element.
        */
       function appendPre(message) {
-        var pre = document.getElementById('Ihtmlcontent');
+        var pre = document.getElementById('content');
         var textContent = document.createTextNode(message + '\n');
         pre.appendChild(textContent);
       }
