@@ -78,9 +78,11 @@
 					});
 					$("#datetimepicker6").on("dp.change", function(e) {
 						$('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+						$('#datetimepicker7').data("DateTimePicker").minTime(e.date);
 					});
 					$("#datetimepicker7").on("dp.change", function(e) {
 						$('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+						$('#datetimepicker6').data("DateTimePicker").maxTime(e.date);
 					});
 				});
 			</script>
