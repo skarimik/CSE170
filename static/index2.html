@@ -432,6 +432,7 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <h2>Create QR</h2>
+                            <h3><small>add your event details below</small></h3>
                             <div id='content'>
                                 <!-- add Title text, date/time selector, location, description, url -->
                                 <form class="form-horizontal">
@@ -440,8 +441,8 @@
                                         <div class="container">
                                             <div class="form-group">
                                                 <div class='col-md-5'>
-                                                    <label for="event_title">Event title:</label>
-                                                    <input type="event_title" class="form-control" id="event_title" placeholder="Title">
+                                                    <label for="event_title">Title:</label>
+                                                    <input type="event_title" class="form-control" id="event_title" placeholder="your event title">
                                                 </div>
                                             </div>
                                         </div>
@@ -451,9 +452,9 @@
                                             <!-- Event Start  -->
                                             <div class='col-md-4'>
                                                 <div class="form-group">
-                                                    <label for="datetimepicker6">Event Start:</label>
+                                                    <label for="datetimepicker6">Select start:</label>
                                                     <div class='input-group date' id='datetimepicker6'>
-                                                        <input type='text' class="form-control" placeholder="Start" />
+                                                        <input type='text' class="form-control" placeholder="start time" />
                                                         <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar">
                                                 </span>
@@ -466,9 +467,9 @@
                                             <!-- Event End -->
                                             <div class='col-md-4'>
                                                 <div class="form-group">
-                                                    <label for="datetimepicker7">Event End:</label>
+                                                    <label for="datetimepicker7">Select end:</label>
                                                     <div class='input-group date' id='datetimepicker7'>
-                                                        <input type='text' class="form-control" placeholder="End" />
+                                                        <input type='text' class="form-control" placeholder="end time" />
                                                         <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar">
                                                 </span>
@@ -497,8 +498,8 @@
                                         <div class="container">
                                             <div class="form-group">
                                                 <div class='col-md-5'>
-                                                    <label for="event_location">Event Location:</label>
-                                                    <input type="event_location" class="form-control" id="event_location" placeholder="Location">
+                                                    <label for="event_location">Location:</label>
+                                                    <input type="event_location" class="form-control" id="event_location" placeholder="whereabouts...">
                                                 </div>
                                             </div>
                                         </div>
@@ -507,11 +508,26 @@
                                         <div class="container">
                                             <div class="form-group">
                                                 <div class='col-md-5'>
-                                                    <label for="event_discription">Event Discription:</label>
-                                                    <input type="event_discription" class="form-control" id="event_discription" placeholder="Discription">
+                                                    <label for="event_description">Description:</label>
+                                                    <input type="event_description" class="form-control" id="event_description" placeholder="description...">
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <!-- URL -->
+                                        <div class="container">
+                                            <label for="event_url" class="control-label col-md-5">Website:</label>
+                                            <div class="input-group col-md-5">
+                                                    <span class="input-group-addon">http://</span>
+                                                    <input type="text" class="form-control" id="event_url" placeholder="yoursite.com" />
+                                                    <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-globe"></span>
+                                                    </span>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <br>
 
                                         <!-- Generate QR button -->
                                         <div class="container">
@@ -568,6 +584,7 @@
                                     </div>
                                 </form>
                             </div>
+                            <br>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
                         </div>
                     </div>
