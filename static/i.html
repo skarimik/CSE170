@@ -94,6 +94,7 @@
        * @param {string} message Text to be placed in pre element.
        */
       function appendPre(message) {
+        alert("message is "+ message);
         var pre = document.getElementById('content');
         var textContent = document.createTextNode(message + '\n');
         pre.appendChild(textContent);
@@ -105,6 +106,7 @@
        * appropriate message is printed.
        */
       function listUpcomingEvents() {
+        alert("in listupcomingEvents");
         gapi.client.calendar.events.list({
           'calendarId': 'primary',
           'timeMin': (new Date()).toISOString(),
