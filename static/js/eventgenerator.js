@@ -52,7 +52,7 @@ function generateQR(e) {
     var qrcodeFullText = qrcodeTitle + '%' + qrcodeStartTime + '%' + qrcodeEndTime
         + '%' + qrcodeLocation + '%' + qrcodeDescripion + '%' + qrcodeURL;
 
-    var qrcodeImage = jQuery('#generatedQRcode').qrcode({width: 150, height: 150, text:qrcodeFullText});
-    $('#generatedQRcode').prepend($('img')).attr('src', qrcodeImage);
+    var qrcodeImage = jquery('#generatedQRcode').qrcode({width: 150, height: 150, text:qrcodeFullText});
+    $('#generatedQRcode:').prepend($('img')).attr('src', qrcodeImage);
 }
 
