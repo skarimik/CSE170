@@ -1,6 +1,7 @@
 // eventgenerator.js
 
 
+/*
 $(function () {
     $('#datetimepicker6').datetimepicker();
     $('#datetimepicker7').datetimepicker({
@@ -13,6 +14,7 @@ $(function () {
         $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
     });
 });
+*/
 
 /*
  * QR Code: 
@@ -49,7 +51,7 @@ function generateQR(e) {
     var qrcodeLocation = $('#event_location').val();
     var qrcodeDescripion = $('#event_description').val();
     var qrcodeURL = $('#event_URL').val();
-    var qrcodeFullText = qrcodeTitle + '%' + qrcodeStartTime + '%' + qrcodeEndTime
+    var qrcodeFullText = qrcodeTitle + '%'
         + '%' + qrcodeLocation + '%' + qrcodeDescripion + '%' + qrcodeURL;
 
     var qrcodeImage = jquery('#generatedQRcode').qrcode({width: 150, height: 150, text:qrcodeFullText});
