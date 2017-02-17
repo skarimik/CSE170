@@ -27,8 +27,32 @@ $(function () {
  *
  */
 
+// Call this function when the page loads (the "ready" event)
+$(document).ready(function() {
+    initializePage();
+})
+
+/*
+ * Function that is called when the document is ready.
+ */
+function initializePage() {
+    $('#qrButton').click(generateQR);
+}
 
 
-var qrcodeText = 
 
-jQuery('#generatedQRcode').qrcode({width: 150, height: 150, text:"sample qr code"});
+function generateQR(e) {
+    e.preventDefault();
+    var qrcodeTitle = $('#event_title').val();
+    var qrcodeStartTime = $('#datetimepicker6').val();
+    var qrcodeEndTime = $('#datetimepicker7').val();
+    var qrcodeLocation = $('#event_location').val();
+    var qrcodeDescripion = $('#event_description').val();
+    var qrcodeURL = $('#event_URL').val();
+    var qrcodeFullText = qrcodeTitle + '%' + qrcodeStartTime + '%' + qrcodeEndTime
+        + '%' + qrcodeLocation + '%' + qrcodeDescripion + '%' + qrcodeURL;
+
+    var qrcodeImage = jQuery('#generatedQRcode').qrcode({width: 150, height: 150, text:qrcodeFullText});
+    $('#generatedQRcode').prepend($('img')).attr('src', qrcodeImage);
+}
+
