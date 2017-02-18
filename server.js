@@ -13,7 +13,8 @@ var express = require('express');
 var handlebars = require('express3-handlebars');
 var http = require('http');
 var path = require('path');
-var event = require('./static/js/addEvents')
+var event = require('./static/js/addEvents');
+
 
 // Create the server instance
 var app = express();

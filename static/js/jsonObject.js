@@ -2,23 +2,32 @@
 
 // Call this function when the page loads (the "ready" event)
 // $(document).ready(function() {
-// 	initializePageihtml();
+//  	initializePageihtml();
+//  	console.log("hello Soheil");
 // })
 
 /*
  * Function that is called when the document is ready.
  */
-function initializePageihtml() {
+ var oneTimeToDo = 0;
+function MakingTheButtonsReady() {
+	if(oneTimeToDo == 0){
+		
 		$('#IndexaddEvents').click(addEventsHere);
+		$('#SaveResultQR').click(insertTolist);
+		oneTimeToDo = 1;
+	}
+	console.log("changing the click");
 }
 
 /*
  * Make an AJAX call to retrieve project details and add it in
  */
 function addEventsHere(e) {
+	
 	// Prevent following the link
 	e.preventDefault();
-
+	
 	var URL = "/event"
 
 	
@@ -26,7 +35,24 @@ function addEventsHere(e) {
 	console.log("Url is: "+ URL);
 }
 
+function insertTolist(e) {
+	
+	// Prevent following the link
+	e.preventDefault();
+	
+	var URL = "/event"
 
+	
+	$.get(URL,insertingFunction);
+	console.log("Url is: "+ URL);
+}
+function insertingFunction(result){
+	var value = $('#qr-value').text();
+	console.log(value);
+	$('#IndexNewEvent').append("<h4>"+value+"<h4>")
+	result[result.length] = value;
+
+}
 
 /*
 * The call back function

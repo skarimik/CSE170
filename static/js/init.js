@@ -64,6 +64,5 @@ function startReading(){
     cam.start();
 }
 function stopReading(){
-    alert("we are here");
     cam.stop();
 }
