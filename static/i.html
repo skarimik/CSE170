@@ -5,14 +5,20 @@
     <meta charset='utf-8' />
   </head>
   <body>
+
     <p>Google Calendar API Quickstart</p>
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize-button" style="display: none;">Authorize</button>
     <button id="signout-button" style="display: none;">Sign Out</button>
+    <button id="IndexaddEvents" onclick="initializePageihtml()">Add The Events</button>
 
-    <pre id="ihtmlcontent"></pre>
+    <pre id="ihtmlcontent">
+      <h4 id="IndexNewEvent">Here are Some of the events:</h4>
 
+    </pre>
+    
+<!-- 
     <script type="text/javascript">
       // Client ID and API key from the Developer Console
       var CLIENT_ID = '353317309491-3ed3on54tpim02gc5sg7tt8njnfi24gs.apps.googleusercontent.com';
@@ -127,11 +133,16 @@
         });
       }
 
-    </script>
+    </script> -->
 
-    <script async defer src="https://apis.google.com/js/api.js"
+    <!-- <script async defer src="https://apis.google.com/js/api.js"
       onload="this.onload=function(){};handleClientLoad()"
       onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script>
+    </script> -->
+
+   <!-- <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script> 
+ -->
+  
   </body>
 </html>

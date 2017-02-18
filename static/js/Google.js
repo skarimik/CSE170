@@ -11,7 +11,7 @@ function onSignIn(googleUser) {
         console.log('Family Name: ' + profile.getFamilyName());
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail());
-        $("#start").load("../index2.html",function(){
+        $("#starterPageForHtml").load("../index2.html",function(){
         $("#QRscanner").load("../cam.html");
         $("#QRgenerator").load("../QRgenerator.html");
         $("#QRcalendar").load("../i.html");
