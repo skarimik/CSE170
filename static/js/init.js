@@ -3,6 +3,7 @@
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
 var cam_video_id = "camsource"
+var localstream;
 
 function xabc(){
      // Assign the <video> element to a variable
@@ -16,6 +17,7 @@ function xabc(){
         navigator.getUserMedia(options, function(stream) {
 
             video.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
+            localstream = stream;
 
         }, function(error) {
             console.log(error)
@@ -58,24 +60,13 @@ function xabc(){
 })*/
 var cam = null;
 function stopCamera(){
-     // Assign the <video> element to a variable
-    var video = document.getElementById(cam_video_id);
-    var options = {
-        "audio": false,
-        "video": true
-    };
-    // Replace the source of the video element with the stream from the camera
-    if (navigator.getUserMedia) {
-        navigator.getUserMedia(options, function(stream) {
-
-            video.src = stream;
-
-        }, function(error) {
-            console.log(error)
-        });
-        // Below is the latest syntax. Using the old syntax for the time being for backwards compatibility.
-        // navigator.getUserMedia({video: true}, successCallback, errorCallback);
-    }
+     var video = document.getElementById(cam_video_id);
+     //clearInterval(theDrawLoop);
+  //ExtensionData.vidStatus = 'off';
+  video.pause();
+  video.src = "";
+  localstream.getTracks()[0].stop();
+  console.log("Vid off");
 
 }
 function startReading(){
