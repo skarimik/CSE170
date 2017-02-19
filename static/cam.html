@@ -36,7 +36,8 @@
         </div>
         <p>Hold a QR Code in front of your webcam.</p>
         <button id="capture" onClick="startReading()">Capture</button>
-        <button id="SaveResultQR" onClick="">Save</button>
+        <button id="SaveResultQR" onClick="">Save</button><br/>
+        <button id="StopingCamera" onclick="stopCamera()">Stop Camera</button>
         <video  id="camsource" muted autoplay width="320" height="240">Put your fallback message here.</video>
         <!--<script src="./js/main.js"></script>-->
         <canvas id="qr-canvas" width="320" height="240" style="display:none">Hello</canvas>

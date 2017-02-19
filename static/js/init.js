@@ -57,6 +57,27 @@ function xabc(){
     cam.start()
 })*/
 var cam = null;
+function stopCamera(){
+     // Assign the <video> element to a variable
+    var video = document.getElementById(cam_video_id);
+    var options = {
+        "audio": false,
+        "video": true
+    };
+    // Replace the source of the video element with the stream from the camera
+    if (navigator.getUserMedia) {
+        navigator.getUserMedia(options, function(stream) {
+
+            video.src = stream;
+
+        }, function(error) {
+            console.log(error)
+        });
+        // Below is the latest syntax. Using the old syntax for the time being for backwards compatibility.
+        // navigator.getUserMedia({video: true}, successCallback, errorCallback);
+    }
+
+}
 function startReading(){
     xabc();
     

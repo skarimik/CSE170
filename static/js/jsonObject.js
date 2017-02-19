@@ -49,7 +49,7 @@ function insertTolist(e) {
 function insertingFunction(result){
 	var value = $('#qr-value').text();
 	console.log(value);
-	$('#IndexNewEvent').append("<h4>"+value+"<h4>")
+	$('#IndexNewEvent').append("<h4><li>"+value+"</li></h4>")
 	result[result.length] = value;
 
 }

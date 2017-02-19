@@ -13,7 +13,7 @@ function onSignIn(googleUser) {
         console.log("Email: " + profile.getEmail());
         $("#starterPageForHtml").load("../index2.html",function(){
         $("#QRscanner").load("../cam.html");
-        $("#QRgenerator").load("../QRgenerator.html");
+        //$("#QRgenerator").load("../QRgenerator.html");
         $("#QRcalendar").load("../i.html");
 
         });
