@@ -2,6 +2,8 @@
 
 
 /*
+ * this function prevents the date/time selectors from having an end time which comes before a start time
+ */
 $(function () {
     $('#datetimepicker6').datetimepicker();
     $('#datetimepicker7').datetimepicker({
@@ -14,7 +16,7 @@ $(function () {
         $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
     });
 });
-*/
+
 
 /*
  * QR Code: 
@@ -38,23 +40,37 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-    $('#qrButton').click(generateQR);
+    $('#generateQRButton').click(generateQR);
 }
-
 
 
 function generateQR(e) {
     e.preventDefault();
     var qrcodeTitle = $('#event_title').val();
-   // var qrcodeStartTime = $('#datetimepicker6').val();
-   // var qrcodeEndTime = $('#datetimepicker7').val();
+    var qrcodeStartTime = $('#datetimepicker6').val();
+    var qrcodeEndTime = $('#datetimepicker7').val();
+
     var qrcodeLocation = $('#event_location').val();
     var qrcodeDescripion = $('#event_description').val();
     var qrcodeURL = $('#event_URL').val();
     var qrcodeFullText = qrcodeTitle + '%'
         + '%' + qrcodeLocation + '%' + qrcodeDescripion + '%' + qrcodeURL;
+    var qrcodeImage = $('#generatedQRCode').qrcode({width: 250, height: 250, text:qrcodeFullText});
+    // $('#generatedQRCode').attr('src', qrcodeImage.src);
+    // $('#generatedQRCode').prepend($('img')).attr('src', qrcodeImage);
+    $('#generatedQRCode[label]').text("Press and hold the image to save to your mobile");
+    
+    // /*
+    //  * this logic links the download selector and the image div
+    //  */
 
-    var qrcodeImage = $('#generatedQRcode').qrcode({width: 150, height: 150, text:qrcodeFullText});
-    $('#generatedQRcode:').prepend($('img')).attr('src', qrcodeImage);
+    // var qrImageLink = document.createElement('a');
+    // // don't show the link on the page
+    // qrImageLink.style = "display: none";
+    // qrImageLink.href = "data:application/octet-stream," + encodeURIComponent(qrcodeImage);
+    // qrImageLink.download = qrcodeTitle + '.jpg';
+    // document.body.appendChild(qrImageLink);
+    // qrImageLink.click();
+    // document.body.removeChild(qrImageLink);
+
 }
-

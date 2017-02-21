@@ -2,6 +2,8 @@
 <html lang="en">
 
     <head>
+
+        <meta charset="utf-8">
         <!-- Reference to jQuery, moment.js, & bootstrap libraries -->
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
@@ -11,6 +13,8 @@
         <!-- include Bootstrap DateTimePicker CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+        <!-- include the CSS stylesheet for this page -->
+        <link rel="stylesheet" href="css/eventqr-generator.css">
 
         <!-- include QR code libraries and eventgenerator.js -->
         <script type="text/javascript" src="js/jquery.qrcode.js"></script>
@@ -117,7 +121,7 @@
 
                     <!-- URL -->
                     <div class="container">
-                        <label for="event_url" class="control-label col-md-5">Website:</label>
+                        <label for="event_url" class="control-label col-md-3">Website:</label>
                         <div class="input-group col-md-5">
                                 <span class="input-group-addon">http://</span>
                                 <input type="text" class="form-control" id="event_url" placeholder="yoursite.com" />
@@ -135,49 +139,13 @@
                         <div class="form-group">
                             <div class='col-md-5'>
                                 <div style="text-align: center;">
-                                    <style>
-                                        .generate_button {
-                                            display: inline-block;
-                                            border-radius: 4px;
-                                            background-color: #66B3FF;
-                                            border: none;
-                                            color: #FFFFFF;
-                                            text-align: center;
-                                            font-size: 28px;
-                                            padding: 20px;
-                                            width: 200px;
-                                            transition: all 0.5s;
-                                            cursor: pointer;
-                                            margin: 5px;
-                                        }
+<!--                                    <button class="generate_button" id="generateQRButton" onclick="alert('Generating QR...')" style="vertical-align:middle"> -->
+                                    <button class="generate_button" id="generateQRButton" onclick="alert('Generating downloadable QR code...')" style="vertical-align: middle">
+                                    <span>Create QR</span>
 
-                                        .generate_button span {
-                                            cursor: pointer;
-                                            display: inline-block;
-                                            position: relative;
-                                            transition: 0.5s;
-                                        }
-
-                                        .generate_button span:after {
-                                            content: '\00bb';
-                                            position: absolute;
-                                            opacity: 0;
-                                            top: 0;
-                                            right: -20px;
-                                            transition: 0.5s;
-                                        }
-
-                                        .generate_button:hover span {
-                                            padding-right: 25px;
-                                        }
-
-                                        .generate_button:hover span:after {
-                                            opacity: 1;
-                                            right: 0;
-                                        }
-                                    </style>
-                                   <button class="generate_button" id="qrButton" onclick="alert('Generating QR...')" style="vertical-align:middle">
-                                    <span>Create</span>
+                                    <!-- <a="#" this.href = $('#generatedQRCode img:first').attr('src');" 
+                    download>Click here to download QR Code image</a> -->
+                                                
                                     </button>
                                 </div>
                             </div>
@@ -185,10 +153,13 @@
                     </div>
 
                     <!-- (GENERATED) QR CODE -->
-                    <div id="generatedQRcode" img src="">
-                    <!-- <script>
+                    <div class="image-container" id="generatedQRCode" img src="" style="justify-content: center">
+                    <label for="generateQRCode"></label>
+                    <!-- in eventgenerator.js
+                    <script>
                     jQuery("#generatedQRcode").qrcode({width: 150, height: 150, text:"sample qr code"});
-                    </script> -->
+                    </script> 
+                    -->
                     </div>
                 </div>
             </form>
