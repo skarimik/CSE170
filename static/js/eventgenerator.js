@@ -55,6 +55,7 @@ function generateQR(e) {
     var qrcodeURL = $('#event_URL').val();
     var qrcodeFullText = qrcodeTitle + '%'
         + '%' + qrcodeLocation + '%' + qrcodeDescripion + '%' + qrcodeURL;
+    // push JSON object composed of the six fields to events.json
     var qrcodeImage = $('#generatedQRCode').qrcode({width: 250, height: 250, text:qrcodeFullText});
     // $('#generatedQRCode').attr('src', qrcodeImage.src);
     // $('#generatedQRCode').prepend($('img')).attr('src', qrcodeImage);
