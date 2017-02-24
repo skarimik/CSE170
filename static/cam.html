@@ -1,60 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>JSQRCode Scanner Demo</title>
-        <script type="text/javascript" src="js/lib/jquery-1.7.2.min.js"></script>
-        <script type="text/javascript" src="js/lib/jsqrcode/grid.js"></script>
-        <script type="text/javascript" src="js/lib/jsqrcode/version.js"></script>
-        <script type="text/javascript" src="js/lib/jsqrcode/detector.js"></script>
-        <script type="text/javascript" src="js/lib/jsqrcode/formatinf.js"></script>
-        <script type="text/javascript" src="js/lib/jsqrcode/errorlevel.js"></script>
-        <script type="text/javascript" src="js/lib/jsqrcode/bitmat.js"></script>
-        <script type="text/javascript" src="js/lib/jsqrcode/datablock.js"></script>
-        <script type="text/javascript" src="js/lib/jsqrcode/bmparser.js"></script>
-        <script type="text/javascript" src="js/lib/jsqrcode/datamask.js"></script>
-        <script type="text/javascript" src="js/lib/jsqrcode/rsdecoder.js"></script>
-        <script type="text/javascript" src="js/lib/jsqrcode/gf256poly.js"></script>
-        <script type="text/javascript" src="js/lib/jsqrcode/gf256.js"></script>
-        <script type="text/javascript" src="js/lib/jsqrcode/decoder.js"></script>
-        <script type="text/javascript" src="js/lib/jsqrcode/QRCode.js"></script>
-        <script type="text/javascript" src="js/lib/jsqrcode/findpat.js"></script>
-        <script type="text/javascript" src="js/lib/jsqrcode/alignpat.js"></script>
-        <script type="text/javascript" src="js/lib/jsqrcode/databr.js"></script>
-        <script type="text/javascript" src="js/qr.js"></script>
-        <script type="text/javascript" src="js/camera.js"></script>
-        <script type="text/javascript" src="js/init.js"></script>
-        
-    </head>
-    <body>
 
-        <h1>JSQRCode Scanner Demo</h1>
+<head>
+    <title>QR Code Scanner</title>
+    <script type="text/javascript" src="js/lib/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/grid.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/version.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/detector.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/formatinf.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/errorlevel.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/bitmat.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/datablock.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/bmparser.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/datamask.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/rsdecoder.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/gf256poly.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/gf256.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/decoder.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/QRCode.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/findpat.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/alignpat.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/databr.js"></script>
+    <script type="text/javascript" src="js/qr.js"></script>
+    <script type="text/javascript" src="js/camera.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+</head>
 
-        
+<body>
 
-        <div class="select">
-            <label for="videoSource">Video source: </label><select id="videoSource"></select>
-        </div>
-        <p>Hold a QR Code in front of your webcam.</p>
-        <button id="capture" onClick="startReading()">Capture</button>
-        <button id="SaveResultQR" onClick="">Save</button><br/>
-        <button id="StopingCamera" onclick="stopCamera()">Stop Camera</button>
-        <video  id="camsource" muted autoplay width="320" height="240">Put your fallback message here.</video>
-        <!--<script src="./js/main.js"></script>-->
-        <canvas id="qr-canvas" width="320" height="240" style="display:none">Hello</canvas>
-        <h3 id="qr-value"></h3>
-        <script src="js/jquery.js"></script>
+    <h1>Scan QR Code</h1>
+    <p>Start Camera &#8594 Position QR &#8594 Save</p>
+    <button id="capture" onClick="startReading()">Start Camera</button>
+    <button id="StopingCamera" onclick="stopCamera()">Stop Camera</button><br/>
+    <video id="camsource" muted autoplay width="320" height="240">Scan</video>
+    <!--<script src="./js/main.js"></script>-->
+    <button id="SaveResultQR" onClick="">Save</button>
+    <div class="select">
+        <label for="videoSource">Video source: </label><select id="videoSource"></select>
+    </div>
+    <canvas id="qr-canvas" width="320" height="240" style="display:none">Hello</canvas>
+    <h3 id="qr-value"></h3>
+
+    <script src="js/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="./js/Google.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://code.jquery.com/jquery.js"></script>
 
-     
-    
     <script src="js/introHCI.js"></script>
     <!-- Include all compiled plugins (blelow), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="/js/jsonObject.js"></script>
-    
 
-    </body>
+</body>
+
 </html>
