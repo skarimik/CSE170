@@ -56,19 +56,9 @@ function generateQR(e) {
     var qrcodeFullText = qrcodeTitle + '%'
         + '%' + qrcodeLocation + '%' + qrcodeDescripion + '%' + qrcodeURL;
 
-    // if an image-container already exists, remove it first
-    // if (document.getElementsByClassName("image-container")) {
-    //     $('.image-container').removeClass('image-container');
-    // }
-    // if (document.getElementById("generatedQRCode")) {
-    //     $('.image-container').removeClass('qrDiv');
-    // }
-    // create the div for the qrcode:
-    
-
-    $('#generatedQRCode').html("")
-    $("#generatedQRCode").qrcode({width: 250, height: 250, text:qrcodeFullText});
-    $("#qr_instruction").html("Press and hold the image to save to your mobile");
+    jQuery("#generatedQRCode").qrcode({width: 200, height: 200, text:qrcodeFullText});
+    $('#qrDescription').html("");
+    $("#qrDescription").html("Press and hold the image to save to your mobile");
     
     // $('#generatedQRCode').attr('src', qrcodeImage.src);
     // $('#generatedQRCode').prepend($('img')).attr('src', qrcodeImage);
