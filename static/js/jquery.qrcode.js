@@ -58,6 +58,7 @@
                 .css("width", options.width+"px")
                 .css("height", options.height+"px")
                 .css("border", "0px")
+                .css("align-vertical", "center")
                 .css("border-collapse", "collapse")
                 .css('background-color', options.background);
           
@@ -83,6 +84,7 @@
 
         return this.each(function(){
             var element = options.render == "canvas" ? createCanvas() : createTable();
+            // remove any pre-existing qrcode canvas before appending
             $(this).html("");
             $(element).appendTo(this);
         });
