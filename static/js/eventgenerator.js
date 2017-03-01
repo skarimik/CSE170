@@ -1,5 +1,8 @@
-// eventgenerator.js
-
+/******************************************************************************
+ * File name: eventgenerator.js
+ *
+ *****************************************************************************/
+ 'use strict';
 
 /*
  * this function prevents the date/time selectors from having an end time which comes before a start time
