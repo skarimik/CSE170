@@ -50,15 +50,18 @@ function initializePage() {
 function generateQR(e) {
     e.preventDefault();
     var qrcodeTitle = $('#event_title').val();
-    var qrcodeStartTime = $('#datetimepicker6').val();
-    var qrcodeEndTime = $('#datetimepicker7').val();
-
+    var qrcodeStartTime = $('#datetimepicker6').data().date;
+    var qrcodeEndTime = $('#datetimepicker7').data().date;
+    
     var qrcodeLocation = $('#event_location').val();
     var qrcodeDescripion = $('#event_description').val();
     var qrcodeURL = $('#event_URL').val();
-    var qrcodeFullText = qrcodeTitle + '%'
-        + '%' + qrcodeLocation + '%' + qrcodeDescripion + '%' + qrcodeURL;
 
+    var qrcodeFullText = qrcodeTitle + '~' + qrcodeStartTime
+        + '~' + qrcodeEndTime + '~' + qrcodeLocation
+        + '~' + qrcodeDescripion + '~' + qrcodeURL;
+
+    console.log('Printing qrcode text' + qrcodeFullText);
     jQuery("#generatedQRCode").qrcode({width: 200, height: 200, text:qrcodeFullText});
     $('#qrDescription').html("");
     $("#qrDescription").html("Press and hold the image to save to your mobile");
