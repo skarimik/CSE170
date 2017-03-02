@@ -14,7 +14,8 @@ function onSignIn(googleUser) {
         $("#starterPageForHtml").load("../index2.html",function(){
         $("#QRscanner").load("../cam.html");
         //$("#QRgenerator").load("../QRgenerator.html");
-        $("#QRcalendar").load("../i.html");
+        $("#QRcalendar").load("../quickstart.html");
+
 
         });
         
@@ -31,4 +32,5 @@ function onSignIn(googleUser) {
 };
 function settingUp(){
         $('#FirstName').text(person.getGivenName());
+     
 }

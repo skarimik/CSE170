@@ -49,7 +49,13 @@ function insertTolist(e) {
 function insertingFunction(result){
 	var value = $('#qr-value').text();
 	console.log(value);
-	$('#IndexNewEvent').append("<h4><li>"+value+"</li></h4>")
+	var parts = value.split('~');
+	$('#eventSummery').val(parts[0]);
+	$('#eventStartDateTime').val(parts[1]);
+	$('#eventEndDateTime').val(parts[2]);
+	$('#eventLocation').val(parts[3]);
+	$('#eventDescription').val(parts[4]);
+	//$('#thisIsNew').append("<h4><li>"+value+"</li></h4>");
 	result[result.length] = value;
 
 }
