@@ -43,15 +43,15 @@
        *  On load, called to load the auth2 library and API client library.
        */
       function handleClientLoad() {
-        if(lock == 0){
+       
           
           gapi.load('client:auth2', initClient);
-        }
+        
       }
-      if(lock == 0){
+    
        handleClientLoad();
-     
-      }
+
+      
       /**
        *  Initializes the API client library and sets up sign-in state
        *  listeners.

@@ -175,18 +175,20 @@ function generateQR(e) {
     }
 
     console.log('Printing qrcode text' + qrcodeFullText);
-    jQuery("#generatedQRCode").qrcode({width: 200, height: 200, text:qrcodeFullText});
+    var x = jQuery("#generatedQRCode").qrcode({width: 200, height: 200, text:qrcodeFullText});
 
     $('#generatedQRCode canvas').click(function() {
-        var qrDownload = $("#generatedQRCode")
+        var qrDownload = $('#generatedQRCode canvas')[0]
         qrDownload = qrDownload.toDataURL("image/png");
-        qrDownload = qrDownload.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
-        this.href = qrDownload;
+        //document.write('<img src="'+img+'"/>');
+        //qrDownload = qrDownload.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+        $('#generatedQRCode canvas').attr('href',qrDownload);
+
     });
 
     
     $('#qrDescription').html("");
-    $("#qrDescription").html("Press and hold the image to save to your mobile");
+    $("#qrDescription").html("Press the image once and then pressn and hold the image to save to your mobile");
     
 
 
