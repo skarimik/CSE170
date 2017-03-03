@@ -7,10 +7,10 @@
   <body>
     <p>Google Calendar API Quickstart</p>
     
-    <!--Add buttons to initiate auth sequence and sign out-->
-    <button id="authorize-button" style="display: none;">Authorize</button>
+    <!--Add buttons to initiate auth sequence and sign out
+    <button id="authorize-button" style="display: block;">Authorize</button>
     <button id="signout-button" style="display: none;">Sign Out</button>
-
+    -->
     <pre id="content"></pre>
     Summery
     <input id="eventSummery" type="text">
@@ -25,7 +25,7 @@
     <button onclick="addToGoogle()">Submit</button>
 
     <script type="text/javascript">
-      alert("we are in the script");
+      
       // Client ID and API key from the Developer Console
       var CLIENT_ID = '353317309491-3ed3on54tpim02gc5sg7tt8njnfi24gs.apps.googleusercontent.com';
 
@@ -36,8 +36,8 @@
       // included, separated by spaces.
       var SCOPES = "https://www.googleapis.com/auth/calendar";
 
-      var authorizeButton = document.getElementById('authorize-button');
-      var signoutButton = document.getElementById('signout-button');
+      // var authorizeButton = document.getElementById('authorize-button');
+      // var signoutButton = document.getElementById('signout-button');
 
       /**
        *  On load, called to load the auth2 library and API client library.
@@ -45,12 +45,13 @@
       function handleClientLoad() {
         gapi.load('client:auth2', initClient);
       }
-
+     // handleClientLoad();
       /**
        *  Initializes the API client library and sets up sign-in state
        *  listeners.
        */
       function initClient() {
+        
         gapi.client.init({
           discoveryDocs: DISCOVERY_DOCS,
           clientId: CLIENT_ID,
@@ -60,33 +61,44 @@
           gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
 
           // Handle the initial sign-in state.
-          updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+          // updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
           authorizeButton.onclick = handleAuthClick;
           signoutButton.onclick = handleSignoutClick;
         });
+          //authorizeButton.style.display = 'block';
+          //authorizeButton.onclick = handleAuthClick;
+          //signoutButton.onclick = handleSignoutClick;
+          handleAuthClick();
+
       }
 
       /**
        *  Called when the signed in status changes, to update the UI
        *  appropriately. After a sign-in, the API is called.
        */
-      function updateSigninStatus(isSignedIn) {
-        if (isSignedIn) {
-          authorizeButton.style.display = 'none';
-          signoutButton.style.display = 'block';
-          listUpcomingEvents();
-          addToGoogle();
-        } else {
-          authorizeButton.style.display = 'block';
-          signoutButton.style.display = 'none';
-        }
-      }
+     // function updateSigninStatus(isSignedIn) {
+     //   if (isSignedIn) {
+     //     console.log("in updateSignin");
+          
+     //     signoutButton.style.display = 'block';
+       
+     //     addToGoogle();
+     //   } else {
+          
+     //     signoutButton.style.display = 'none';
+     //   }
+     // }
 
       /**
        *  Sign in the user upon button click.
        */
       function handleAuthClick(event) {
+
+
+        if(gapi.client.calendar== null){
+
         gapi.auth2.getAuthInstance().signIn();
+        }
       }
 
       /**
@@ -109,9 +121,10 @@
      
       }
         
-      
+     
       function addToGoogle(){
-            
+
+      
        var event = {
           'summary': $('#eventSummery').val(),
           'location': $('#eventLocation').val(),
@@ -124,7 +137,8 @@
             'dateTime': $('#eventEndDateTime').val(),
             'timeZone': 'America/Los_Angeles'
           }
-        }
+        };
+        console.log(event);
 
         var request = gapi.client.calendar.events.insert({
           'calendarId': 'primary',
