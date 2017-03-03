@@ -3,6 +3,7 @@ var id_token;
 
 
 function onSignIn(googleUser) {
+
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
         console.log("ID: " + profile.getId()); // Don't send this directly to your server!
@@ -13,8 +14,11 @@ function onSignIn(googleUser) {
         console.log("Email: " + profile.getEmail());
         $("#starterPageForHtml").load("../index2.html",function(){
         $("#QRscanner").load("../cam.html");
-        //$("#QRgenerator").load("../QRgenerator.html");
         $("#QRcalendar").load("../quickstart.html");
+        //$("#QRgenerator").load("../QRgenerator.html");
+        // $("#QRcalendar").load("../quickstart.html");
+        // popupWindow = window.open('../quickstart.html', 'name', 'width=500,height=1');
+        // setTimeout(function(){ popupWindow.close(); }, 7000);
 
 
         });
@@ -32,5 +36,5 @@ function onSignIn(googleUser) {
 };
 function settingUp(){
         $('#FirstName').text(person.getGivenName());
-     
+
 }
