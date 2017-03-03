@@ -22,14 +22,10 @@
     <input id="eventStartDateTime" type="text">
     End Date (ex: 2015-11-01T09:00:00-07:00)
     <input id="eventEndDateTime" type="text">
-    <button onclick="fillingTheEvent()">Submit</button>
-
-     <ul>
-      <ol style='margin-left:-20px' id="thisIsNew"></ol>
-      </ul>
+    <button onclick="addToGoogle()">Submit</button>
 
     <script type="text/javascript">
-      
+      alert("we are in the script");
       // Client ID and API key from the Developer Console
       var CLIENT_ID = '353317309491-3ed3on54tpim02gc5sg7tt8njnfi24gs.apps.googleusercontent.com';
 
@@ -106,10 +102,17 @@
        *
        * @param {string} message Text to be placed in pre element.
        */
-     var event ={}
+     
       function fillingTheEvent(){
-    
-        event = {
+        
+       addToGoogle();
+     
+      }
+        
+      
+      function addToGoogle(){
+            
+       var event = {
           'summary': $('#eventSummery').val(),
           'location': $('#eventLocation').val(),
           'description': $('#eventDescription').val(),
@@ -121,14 +124,7 @@
             'dateTime': $('#eventEndDateTime').val(),
             'timeZone': 'America/Los_Angeles'
           }
-        };
-        addToGoogle();
-      }
-        
-      
-      function addToGoogle(){
-            
-        
+        }
 
         var request = gapi.client.calendar.events.insert({
           'calendarId': 'primary',
