@@ -25,7 +25,7 @@
     <button onclick="addToGoogle()">Submit</button>
 
     <script type="text/javascript">
-      
+      var lock = 0;
       // Client ID and API key from the Developer Console
       var CLIENT_ID = '353317309491-3ed3on54tpim02gc5sg7tt8njnfi24gs.apps.googleusercontent.com';
 
@@ -43,9 +43,14 @@
        *  On load, called to load the auth2 library and API client library.
        */
       function handleClientLoad() {
-        gapi.load('client:auth2', initClient);
+        if(lock == 0){
+          lock = 1;
+          gapi.load('client:auth2', initClient);
+        }
       }
-     // handleClientLoad();
+      if(lock == 0){
+       handleClientLoad();
+      }
       /**
        *  Initializes the API client library and sets up sign-in state
        *  listeners.
