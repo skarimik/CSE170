@@ -49,17 +49,52 @@ function initializePage() {
 
 function generateQR(e) {
     e.preventDefault();
+
     var qrcodeTitle = $('#event_title').val();
     var qrcodeStartTime = $('#datetimepicker6').data().date;
     var qrcodeEndTime = $('#datetimepicker7').data().date;
     
     var qrcodeLocation = $('#event_location').val();
-    var qrcodeDescripion = $('#event_description').val();
+    var qrcodeDescription = $('#event_description').val();
     var qrcodeURL = $('#event_URL').val();
 
-    var qrcodeFullText = qrcodeTitle + '~' + qrcodeStartTime
-        + '~' + qrcodeEndTime + '~' + qrcodeLocation
-        + '~' + qrcodeDescripion + '~' + qrcodeURL;
+    // check that inputs are filled: if not, change corresponding field title red
+    if (qrcodeTitle === "") {
+        $('label[for=event_title]').css({color:'red'});
+        $('#event_title').focus();
+        return false;
+    }
+    if (qrcodeStartTime === "") {
+        $('label[for=datetimepicker6]').css({color:'red'});
+        $('#datetimepicker6').focus();
+        return false;
+    }
+    if (qrcodeEndTime === "") {
+        $('label[for=datetimepicker7]').css({color:'red'});
+        $('#datetimepicker7').focus();
+        return false;
+    }
+    if (qrcodeLocation === "") {
+        $('label[for=event_location]').css({color:'red'});
+        $('#event_location').focus();
+        return false;
+    }
+    if (qrcodeDescription === "") {
+        $('label[for=event_description]').css({color:'red'});
+        $('#event_description').focus();
+        return false;
+    }
+    // if no url, ignore:
+    if (qrcodeURL === "") {
+        var qrcodeFullText = qrcodeTitle + '~' + qrcodeStartTime
+            + '~' + qrcodeEndTime + '~' + qrcodeLocation
+            + '~' + qrcodeDescription;
+    }
+    else {
+        var qrcodeFullText = qrcodeTitle + '~' + qrcodeStartTime
+            + '~' + qrcodeEndTime + '~' + qrcodeLocation
+            + '~' + qrcodeDescription + '~' + qrcodeURL;
+    }
 
     console.log('Printing qrcode text' + qrcodeFullText);
     jQuery("#generatedQRCode").qrcode({width: 200, height: 200, text:qrcodeFullText});
