@@ -60,6 +60,7 @@ function xabc(){
 })*/
 var cam = null;
 function stopCamera(){
+    if(localstream == undefined){return;}
      var video = document.getElementById(cam_video_id);
      //clearInterval(theDrawLoop);
   //ExtensionData.vidStatus = 'off';
@@ -71,7 +72,7 @@ function stopCamera(){
 }
 function startReading(){
     xabc();
-    
+    stopCamera();
     cam = camera(cam_video_id);
     cam.start();
 }
