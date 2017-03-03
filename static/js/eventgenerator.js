@@ -84,7 +84,7 @@ function generateQR(e) {
     
     var qrcodeLocation = $('#event_location').val();
     var qrcodeDescription = $('#event_description').val();
-    var qrcodeURL = $('#event_URL').val();
+    var qrcodeURL = $('#event_url .form-control').val();
 
     // check that inputs are filled: if not, change corresponding field title red
     if (qrcodeTitle === "") {
@@ -112,16 +112,66 @@ function generateQR(e) {
         $('#event_description').focus();
         return false;
     }
-    // if no url, ignore:
-    if (qrcodeURL === "") {
-        var qrcodeFullText = qrcodeTitle + '~' + qrcodeStartTime
-            + '~' + qrcodeEndTime + '~' + qrcodeLocation
-            + '~' + qrcodeDescription;
+
+    // change start date formatting --> deconstruct date object into its components
+    var startMonth = qrcodeStartTime.substring(0,2);
+    var startDay = qrcodeStartTime.substring(3,5);
+    var startYear = qrcodeStartTime.substring(6, 10);
+
+    var startHour = qrcodeStartTime.substring(11, 13);
+    if (startHour[1] === ":") {
+        startHour = startHour[0];
+        var startMinutes = qrcodeStartTime.substring(13, 15);
+        var startamPM = qrcodeStartTime.substring(16, 18);
     }
     else {
-        var qrcodeFullText = qrcodeTitle + '~' + qrcodeStartTime
-            + '~' + qrcodeEndTime + '~' + qrcodeLocation
-            + '~' + qrcodeDescription + '~' + qrcodeURL;
+        var startMinutes = qrcodeStartTime.substring(14, 16);
+        var startamPM = qrcodeStartTime.substring(17, 19);
+    }
+
+
+    // change end date formatting --> deconstruct date object into its components
+    var endMonth = qrcodeEndTime.substring(0,2);
+    var endDay = qrcodeEndTime.substring(3,5);
+    var endYear = qrcodeEndTime.substring(6, 10);
+
+    var endHour = qrcodeEndTime.substring(11, 13);
+    if (endHour[1] === ":") {
+        endHour = endHour[0];
+        var endMinutes = qrcodeEndTime.substring(13, 15);
+        var endamPM = qrcodeEndTime.substring(16, 18);
+    }
+    else {
+        var endMinutes = qrcodeEndTime.substring(14, 16);
+        var endamPM = qrcodeEndTime.substring(17, 19);
+    }
+
+    // convert to 24hr time
+    if (startamPM === "PM") {
+        startHour = parseInt(startHour) + 12;
+    }
+    if (endamPM === "PM") {
+        endHour = parseInt(endHour) + 12;
+    }
+
+    // combine into proper format:
+    var fullStartTime = startHour + ':' + startMinutes + ':00';
+    var formattedStartDate = startYear + '-' + startMonth + '-' + startDay + 'T'
+        + fullStartTime;
+
+
+    var fullEndTime = endHour + ':' + endMinutes + ':00';
+    var formattedEndDate = endYear + '-' + endMonth + '-' + endDay + 'T'
+        + fullEndTime;
+
+    // if no url, ignore:
+    if (typeof qrcodeURL === "undefined") {
+        var qrcodeFullText = qrcodeTitle + '~' + formattedStartDate + '~' + formattedEndDate
+            + '~' + qrcodeLocation + '~' + qrcodeDescription;
+    }
+    else {
+        var qrcodeFullText = qrcodeTitle + '~' + formattedStartDate +  '~' + formattedEndDate
+            + '~' + qrcodeLocation + '~' + qrcodeDescription + '~' + qrcodeURL;
     }
 
     console.log('Printing qrcode text' + qrcodeFullText);
