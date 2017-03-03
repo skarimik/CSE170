@@ -63,6 +63,15 @@ function generateQR(e) {
 
     console.log('Printing qrcode text' + qrcodeFullText);
     jQuery("#generatedQRCode").qrcode({width: 200, height: 200, text:qrcodeFullText});
+
+    $('#generatedQRCode canvas').click(function() {
+        var qrDownload = $("#generatedQRCode")
+        qrDownload = qrDownload.toDataURL("image/png");
+        qrDownload = qrDownload.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+        this.href = qrDownload;
+    });
+
+    
     $('#qrDescription').html("");
     $("#qrDescription").html("Press and hold the image to save to your mobile");
     
@@ -82,3 +91,4 @@ function generateQR(e) {
     // document.body.removeChild(qrImageLink);
 
 }
+
