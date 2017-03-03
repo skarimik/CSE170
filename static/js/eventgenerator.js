@@ -13,9 +13,11 @@ $(function () {
         useCurrent: false //Important! See issue #1075
     });
     $("#datetimepicker6").on("dp.change", function (e) {
+        $('label[for=datetimepicker6]').css({color:'black'});
         $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
     });
     $("#datetimepicker7").on("dp.change", function (e) {
+        $('label[for=datetimepicker7]').css({color:'black'});
         $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
     });
 });
@@ -43,7 +45,33 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
+    $('label[for=event_title]').css({color:'red'});
+    $('#event_title').keypress(function(){
+        $('label[for=event_title]').css({color:'black'});
+    });
+
+    $('label[for=datetimepicker6]').css({color:'red'});
+    $('#datetimepicker6').keypress(function(){
+        $('label[for=datetimepicker6]').css({color:'black'});
+    });
+
+    $('label[for=datetimepicker7]').css({color:'red'});
+    $('#datetimepicker7').keypress(function(){
+        $('label[for=datetimepicker7]').css({color:'black'});
+    });
+
+    $('label[for=event_location]').css({color:'red'});
+    $('#event_location').keypress(function(){
+        $('label[for=event_location]').css({color:'black'});
+    });
+
+    $('label[for=event_description]').css({color:'red'});
+    $('#event_description').keypress(function(){
+        $('label[for=event_description]').css({color:'black'});
+    });
+
     $('#generateQRButton').click(generateQR);
+
 }
 
 
@@ -64,12 +92,12 @@ function generateQR(e) {
         $('#event_title').focus();
         return false;
     }
-    if (qrcodeStartTime === "") {
+    if (typeof qrcodeStartTime === "undefined") {
         $('label[for=datetimepicker6]').css({color:'red'});
         $('#datetimepicker6').focus();
         return false;
     }
-    if (qrcodeEndTime === "") {
+    if (typeof qrcodeEndTime === "undefined") {
         $('label[for=datetimepicker7]').css({color:'red'});
         $('#datetimepicker7').focus();
         return false;
@@ -110,6 +138,8 @@ function generateQR(e) {
     $('#qrDescription').html("");
     $("#qrDescription").html("Press and hold the image to save to your mobile");
     
+
+
     // $('#generatedQRCode').attr('src', qrcodeImage.src);
     // $('#generatedQRCode').prepend($('img')).attr('src', qrcodeImage);
     // /*
