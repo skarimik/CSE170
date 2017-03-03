@@ -44,12 +44,13 @@
        */
       function handleClientLoad() {
         if(lock == 0){
-          lock = 1;
+          
           gapi.load('client:auth2', initClient);
         }
       }
       if(lock == 0){
        handleClientLoad();
+     
       }
       /**
        *  Initializes the API client library and sets up sign-in state
