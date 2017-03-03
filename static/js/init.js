@@ -71,8 +71,8 @@ function stopCamera(){
 
 }
 function startReading(){
-    xabc();
     stopCamera();
+    xabc();
     cam = camera(cam_video_id);
     cam.start();
 }
