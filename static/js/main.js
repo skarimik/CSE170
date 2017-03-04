@@ -1,30 +1,24 @@
-/*var videoElement = document.querySelector('video#camsource');*/
-/*'use strict';
+'use strict';
 
 var videoElement = document.querySelector('video');
 var audioSelect = document.querySelector('select#audioSource');
 var videoSelect = document.querySelector('select#videoSource');
-var lastcam;
+
 navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
 function gotSources(sourceInfos) {
-  alert("we are here and sourceInfos length is"+ sourceInfos.length);
   for (var i = 0; i !== sourceInfos.length; ++i) {
     var sourceInfo = sourceInfos[i];
-    
     var option = document.createElement('option');
-    
     option.value = sourceInfo.id;
-    
     if (sourceInfo.kind === 'audio') {
-      
-      
+      option.text = sourceInfo.label || 'microphone ' +
+        (audioSelect.length + 1);
+      audioSelect.appendChild(option);
     } else if (sourceInfo.kind === 'video') {
-      
-      lastcam = sourceInfo;
-
-      
+      option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
+      videoSelect.appendChild(option);
     } else {
       console.log('Some other kind of source: ', sourceInfo);
     }
@@ -48,78 +42,29 @@ function errorCallback(error) {
   console.log('navigator.getUserMedia error: ', error);
 }
 
-function starter() {
+function start() {
   if (window.stream) {
-    
+    videoElement.src = null;
     window.stream.stop();
   }
-  
+  var audioSource = audioSelect.value;
+  var videoSource = videoSelect.value;
   var constraints = {
     audio: {
       optional: [{
-        sourceId: null
+        sourceId: audioSource
       }]
     },
     video: {
       optional: [{
-        sourceId: lastcam
+        sourceId: videoSource
       }]
     }
   };
   navigator.getUserMedia(constraints, successCallback, errorCallback);
 }
 
+audioSelect.onchange = start;
+videoSelect.onchange = start;
 
-
-
-starter();*/
-/*
-function errorCallback(error) {
-  console.log('navigator.getUserMedia error: ', error);
-}
-function successCallback(stream) {
-  window.stream = stream; // make stream available to console
-  
-  videoElement.play();
-}
-if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) {
-  console.log("enumerateDevices() not supported.");
-}
-
-
-// List cameras and microphones.
-var lastcam;
-navigator.mediaDevices.enumerateDevices()
-  .then(function(devices) {
-    devices.forEach(function(device) {
-      if(device.kind=="videoinput"){
-        lastcam = device;
-      }
-      console.log(device.kind + ": " + device.label +
-        " id = " + device.deviceId);
-    });
-  })
-  .catch(function(err) {
-    console.log(err.name + ": " + error.message);
-  });
-function starter() {
-  if (window.stream) {
-    
-    window.stream.stop();
-  }
-  
-  var constraints = {
-    audio: {
-      optional: [{
-        sourceId: null
-      }]
-    },
-    video: {
-      optional: [{
-        sourceId: lastcam
-      }]
-    }
-  };
-  navigator.getUserMedia(constraints, successCallback, errorCallback);
-}
-starter();*/
+start();
