@@ -148,18 +148,27 @@ function generateQR(e) {
 
     // convert to 24hr time
     if (startamPM === "PM") {
-        startHour = parseInt(startHour) + 12;
+        if (startHour != "12") 
+            startHour = parseInt(startHour) + 12;
     }
+    else if (startamPM === "AM" && startHour === "12")
+        startHour = "00";
     if (endamPM === "PM") {
-        endHour = parseInt(endHour) + 12;
+        if (endHour != "12") 
+            endHour = parseInt(endHour) + 12;
     }
+    else if (endamPM === "AM" && endHour === "12")
+        endHour = "00";
 
     // combine into proper format:
+    if (startHour.length === 1) 
+        startHour = "0" + startHour;
     var fullStartTime = startHour + ':' + startMinutes + ':00';
     var formattedStartDate = startYear + '-' + startMonth + '-' + startDay + 'T'
         + fullStartTime;
 
-
+    if (endHour.length === 1)
+        endHour = "0" + endHour;
     var fullEndTime = endHour + ':' + endMinutes + ':00';
     var formattedEndDate = endYear + '-' + endMonth + '-' + endDay + 'T'
         + fullEndTime;
