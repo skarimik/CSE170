@@ -28,7 +28,7 @@
 <script type="text/javascript" src="js/lib/jsqrcode/alignpat.js"></script>
 <script type="text/javascript" src="js/lib/jsqrcode/databr.js"></script>
 <script type="text/javascript" src="js/qr.js"></script>
-<script type="text/javascript" src="js/camera.js"></script>    
+<!-- <script type="text/javascript" src="js/camera.js"></script>     -->
 <script type="text/javascript" src="js/init.js"></script>
 <script type="text/javascript" src="js/jsonObject.js"></script>
 <base target="_blank">
@@ -49,7 +49,7 @@
 
 
   <div class="select">
-  <button id="capture" onClick="startReading()">Restart Scanning</button>
+
     <label for="audioSource">Audio source: </label><select id="audioSource"></select>
   </div>
 
@@ -58,21 +58,21 @@
   </div>
 
   <video id="camsource"  muted autoplay></video>
-  <canvas id="qr-canvas" width="320" height="240" style="display:none">Hello</canvas>
+  <canvas id="qr-canvas" width="320" height="240" style="display:none"></canvas>
    <h3 id="qr-value"></h3>
-
+   <button id="capture" onClick="startScan()">Start Scanning</button>
   <script src="js/main.js"></script>
 
-    <script src="js/jquery.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="./js/Google.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- <script src="js/jquery.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+    <!-- <script src="./js/Google.js"></script> -->
+    <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+    <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
 
-    <script src="js/introHCI.js"></script>
+    <!-- <script src="js/introHCI.js"></script> -->
     <!-- Include all compiled plugins (blelow), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="/js/jsonObject.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <!-- <script src="/js/jsonObject.js"></script> -->
 
 
 </div>

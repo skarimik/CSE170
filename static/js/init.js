@@ -79,3 +79,11 @@ function startReading(){
 function stopReading(){
     cam.stop();
 }
+function startScan(){
+    $('#capture').text("Scanning");
+    if(cam == null){
+        xabc();
+        cam = camera(cam_video_id);
+    }
+    cam.start();
+}
