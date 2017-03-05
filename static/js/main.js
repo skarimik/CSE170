@@ -44,12 +44,13 @@ function errorCallback(error) {
 }
 
 function start() {
+  console.log("sss");
   if (window.stream) {
     videoElement.src = null;
     window.stream.stop();
   }
   var audioSource = audioSelect.value;
-  var videoSource = ources[1].id//videoSelect.value;
+  var videoSource = sources[1].id//videoSelect.value;
   var constraints = {
     audio: {
       optional: [{
