@@ -44,7 +44,7 @@ function errorCallback(error) {
 }
 
 function start() {
-  console.log("sss");
+
   if (window.stream) {
     videoElement.src = null;
     window.stream.stop();
@@ -69,7 +69,8 @@ function start() {
 audioSelect.onchange = start;
 videoSelect.onchange = start;
 
-//start();
+start();
+start();
 
 
 
