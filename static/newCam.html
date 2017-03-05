@@ -29,7 +29,7 @@
 <script type="text/javascript" src="js/lib/jsqrcode/databr.js"></script>
 <script type="text/javascript" src="js/qr.js"></script>
 <!-- <script type="text/javascript" src="js/camera.js"></script>     -->
-<script type="text/javascript" src="js/init.js"></script>
+
 <script type="text/javascript" src="js/jsonObject.js"></script>
 <base target="_blank">
 
@@ -57,7 +57,7 @@
     <label for="videoSource">Video source: </label><select id="videoSource"></select>
   </div>
 
-  <video id="camsource"  width="320" height="240" muted autoplay></video>
+  <video id="camsource" muted autoplay></video>
   <canvas id="qr-canvas" width="320" height="240" style="display:none"></canvas>
    <h3 id="qr-value"></h3>
 
@@ -78,9 +78,10 @@
 
 
 </div>
-
 <script src="/js/jsonObject.js"></script>
+<script type="text/javascript" src="js/init.js"></script>
 <script src="js/main.js"></script>
+
 
 
 </body>
