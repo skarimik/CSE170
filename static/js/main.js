@@ -49,7 +49,7 @@ function start() {
     window.stream.stop();
   }
   var audioSource = audioSelect.value;
-  var videoSource = sources[2].id//videoSelect.value;
+  var videoSource = sources[1].id//videoSelect.value;
   var constraints = {
     audio: {
       optional: [{
