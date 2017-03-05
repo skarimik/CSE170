@@ -69,7 +69,7 @@ function start() {
 audioSelect.onchange = start;
 videoSelect.onchange = start;
 
-start();
+//start();
 
 
 
