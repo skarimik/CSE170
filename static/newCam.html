@@ -48,7 +48,7 @@
 <div id="container">
 
 
-  <div class="select">
+  <div class="select" style="display:none">
 
     <label for="audioSource">Audio source: </label><select id="audioSource"></select>
   </div>
@@ -60,7 +60,9 @@
   <video id="camsource"  muted autoplay></video>
   <canvas id="qr-canvas" width="320" height="240" style="display:none"></canvas>
    <h3 id="qr-value"></h3>
+
    <button id="capture" onClick="startScan()">Start Scanning</button>
+   <button id="SaveResultQR" onClick="">Save</button>
   <script src="js/main.js"></script>
 
     <!-- <script src="js/jquery.js"></script> -->
@@ -77,6 +79,7 @@
 
 </div>
 
+<script src="/js/jsonObject.js"></script>
 
 
 </body>

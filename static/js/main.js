@@ -3,11 +3,12 @@
 var videoElement = document.querySelector('video');
 var audioSelect = document.querySelector('select#audioSource');
 var videoSelect = document.querySelector('select#videoSource');
-
+var sources;
 navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
 function gotSources(sourceInfos) {
+  sources = sourceInfos;
   for (var i = 0; i !== sourceInfos.length; ++i) {
     var sourceInfo = sourceInfos[i];
     var option = document.createElement('option');
@@ -48,7 +49,7 @@ function start() {
     window.stream.stop();
   }
   var audioSource = audioSelect.value;
-  var videoSource = videoSelect.value;
+  var videoSource = sources[2].id//videoSelect.value;
   var constraints = {
     audio: {
       optional: [{
