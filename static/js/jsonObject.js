@@ -1,10 +1,5 @@
 'use strict';
 
-// Call this function when the page loads (the "ready" event)
-// $(document).ready(function() {
-//  	initializePageihtml();
-//  	console.log("hello Soheil");
-// })
 
 /*
  * Function that is called when the document is ready.
@@ -55,7 +50,7 @@ function insertingFunction(result){
 	$('#eventEndDateTime').val(parts[2]);
 	$('#eventLocation').val(parts[3]);
 	$('#eventDescription').val(parts[4]);
-	//$('#thisIsNew').append("<h4><li>"+value+"</li></h4>");
+	
 	result[result.length] = value;
 	alert("QR Event successfully scanned!");
 }

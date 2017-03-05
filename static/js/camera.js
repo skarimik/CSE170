@@ -24,17 +24,15 @@ var camera = (function(p_vid_id, p_inter, p_scale) {
 	}
 
 	function capture() {
-		// console.time('capture');
+	
 	    var w = video.videoWidth * scale;
 	    var h = video.videoHeight * scale;
 	    var qr_can = document.getElementById('qr-canvas').getContext('2d');
 	        qr_can.drawImage(video, 0, 0, w, h);
 	    try        { qrcode.decode();  }
 	    catch(err) { $("#qr-value").text(err); }
-		// console.timeEnd('capture');
-
+	
 	} 
-
 	return {
 		interval:interval,
 		scale:scale,
