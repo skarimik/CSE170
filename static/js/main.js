@@ -43,7 +43,7 @@ function errorCallback(error) {
   console.log('navigator.getUserMedia error: ', error);
 }
 
-function start() {
+function starting() {
 
   if (window.stream) {
     videoElement.src = null;
@@ -66,11 +66,11 @@ function start() {
   navigator.getUserMedia(constraints, successCallback, errorCallback);
 }
 
-audioSelect.onchange = start;
-videoSelect.onchange = start;
+audioSelect.onchange = starting;
+videoSelect.onchange = starting;
 
-start();
-start();
+// starting();
+// starting();
 
 
 
@@ -92,6 +92,7 @@ var camera = (function(p_vid_id, p_inter, p_scale) {
     if(int_id != null){
       stop()
     }
+    starting();
     int_id = setInterval(function(video, scale) { capture() }, interval);
     console.log(int_id);
   }
