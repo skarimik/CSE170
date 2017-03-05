@@ -78,7 +78,7 @@ starting();
 
   var vid_id   = "camsource";
   var interval =  1000;
-  var scale    = 0.5;
+  var scale    = 1;
 
     var video    = document.getElementById(vid_id);
     var int_id   = null;
