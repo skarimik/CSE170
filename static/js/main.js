@@ -37,10 +37,11 @@ function successCallback(stream) {
   window.stream = stream; // make stream available to console
   videoElement.src = window.URL.createObjectURL(stream);
   videoElement.play();
+  alert("success");
 }
 
 function errorCallback(error) {
-  console.log('navigator.getUserMedia error: ', error);
+  alert('navigator.getUserMedia error: ', error);
 }
 
 function starting() {
@@ -50,7 +51,7 @@ function starting() {
     window.stream.stop();
   }
   var audioSource = audioSelect.value;
-  var videoSource = sources[1].id//videoSelect.value;
+  var videoSource = videoSelect.value;//sources[1].id
   var constraints = {
     audio: {
       optional: [{
@@ -69,21 +70,15 @@ function starting() {
 audioSelect.onchange = starting;
 videoSelect.onchange = starting;
 
-// starting();
-// starting();
+starting();
+//starting();
+
+//This is just a prototype ----------------------------------------
 
 
-
-var camera = (function(p_vid_id, p_inter, p_scale) {
-
-  if (p_vid_id == undefined) {
-    console.log("ERROR: You need to specify the id of the <video> element with the camera data stream.");
-    return;
-  }
-
-  var vid_id   = p_vid_id;
-  var interval = p_inter != undefined ? p_inter : 1000;
-  var scale    = p_scale != undefined ? p_scale : 0.5;
+  var vid_id   = "camsource";
+  var interval =  1000;
+  var scale    = 0.5;
 
     var video    = document.getElementById(vid_id);
     var int_id   = null;
@@ -92,7 +87,7 @@ var camera = (function(p_vid_id, p_inter, p_scale) {
     if(int_id != null){
       stop()
     }
-    starting();
+    
     int_id = setInterval(function(video, scale) { capture() }, interval);
     console.log(int_id);
   }
@@ -114,13 +109,63 @@ var camera = (function(p_vid_id, p_inter, p_scale) {
 
   } 
 
-  return {
-    interval:interval,
-    scale:scale,
-    start:start,
-    stop:stop,
-    capture:capture
-  }
+ 
 
-})
+
+
+
+
+
+
+
+
+// var camera = (function(p_vid_id, p_inter, p_scale) {
+
+//   if (p_vid_id == undefined) {
+//     console.log("ERROR: You need to specify the id of the <video> element with the camera data stream.");
+//     return;
+//   }
+
+//   var vid_id   = p_vid_id;
+//   var interval = p_inter != undefined ? p_inter : 1000;
+//   var scale    = p_scale != undefined ? p_scale : 0.5;
+
+//     var video    = document.getElementById(vid_id);
+//     var int_id   = null;
+
+//   function start() {
+//     if(int_id != null){
+//       stop()
+//     }
+    
+//     int_id = setInterval(function(video, scale) { capture() }, interval);
+//     console.log(int_id);
+//   }
+
+//   function stop() {
+//     console.log("Clearing interval with id "+int_id);
+//     clearInterval(int_id);
+//   }
+
+//   function capture() {
+//     // console.time('capture');
+//       var w = video.videoWidth * scale;
+//       var h = video.videoHeight * scale;
+//       var qr_can = document.getElementById('qr-canvas').getContext('2d');
+//           qr_can.drawImage(video, 0, 0, w, h);
+//       try        { qrcode.decode();  }
+//       catch(err) { $("#qr-value").text(err); }
+//     // console.timeEnd('capture');
+
+//   } 
+
+//   return {
+//     interval:interval,
+//     scale:scale,
+//     start:start,
+//     stop:stop,
+//     capture:capture
+//   }
+
+// })
 

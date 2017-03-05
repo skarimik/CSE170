@@ -80,10 +80,26 @@ function stopReading(){
     cam.stop();
 }
 function startScan(){
-    $('#capture').text("Scanning");
+
+    // $('#capture').text("Scanning");
     // if(cam == null){
-     xabc();
-    cam = camera(cam_video_id);
+    //     xabc();
+    //    // cam = camera(cam_video_id);
+
+
+
+
+
+
+
+
+
+
+
+
+
     // }
-    cam.start();
+
+    // cam.start();
+    start();
 }
