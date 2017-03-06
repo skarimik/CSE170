@@ -72,7 +72,3 @@ videoSelect.onchange = starting;
 
 
 
-
-
-
-

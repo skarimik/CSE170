@@ -67,7 +67,10 @@ function stopReading(){
 }
 function startScan(){
 
-    $('#capture').text("Scanning");
+    $('#capture').text('Scanning ');
+    $('#capture').append('| <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> |');
+
+
     if(cam == null){
       
        cam = camera(cam_video_id);
@@ -77,4 +80,14 @@ function startScan(){
 
     cam.start();
     
+}
+function stopScan(){
+    if(cam != null){
+        $('#capture').text('Start Scanning');
+        $('#qr-value').text('');
+        cam.stop();
+    }
+    else{
+        console.log("No camera is scanning");
+    }
 }

@@ -28,15 +28,21 @@
 <script type="text/javascript" src="js/lib/jsqrcode/alignpat.js"></script>
 <script type="text/javascript" src="js/lib/jsqrcode/databr.js"></script>
 <script type="text/javascript" src="js/qr.js"></script>
-<link href='./css/waititng.css' rel="stylesheet">
-<!-- <script type="text/javascript" src="js/camera.js"></script>     -->
+<script type="text/javascript" src="js/camera.js"></script> 
+   <script type="text/javascript" src="js/jquery.js"></script>    
+   <script type="text/javascript" src="js/lib/jquery-1.7.2.min.js"></script>
 
-<script type="text/javascript" src="js/jsonObject.js"></script>
+<link href="./start/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<link href='./css/waititng.css' rel="stylesheet">
+
+<!-- <script type="text/javascript" src="js/jsonObject.js"></script> -->
 <base target="_blank">
 
-<link rel="stylesheet" href="css/main.css" />
+
+<link rel="stylesheet" href="./css/main.css"/>
   <style>
-/*  div.select {
+  /*div.select {
     margin: 0 0 1em 0;
   }*/
   </style>
@@ -59,23 +65,50 @@
 
   <video id="camsource" muted autoplay></video>
   <canvas id="qr-canvas" width="320" height="240" style="display:none"></canvas>
-   <h3 id="qr-value"></h3>
-   <div class="row">
-    <div class="col-lg-6" >
-      <button id="capture" onClick="startScan()">Start Scanning</button>
-   </col>
-    <div class= "col-lg-6">
-      <button id="SaveResultQR" onClick="">Save</button>
-    </col>
-   </row>
+   <pre id="qr-value"></pre>
+   <div class="container">
+     <div class="row" style="margin-left:10%">
+      <div class="col-xs-6" >
+        <button id="capture" onClick="startScan()">Start Scanning</button>
+     </div>
+     <div class= "col-xs-6">
+        <button id="StopScanning" onClick="stopScan() ">Stop Scanning</button>
+      </div>
+    </div>
+    <div class="row" style="margin-left:10%">
+      <div class= "col-xs-6">
+        <button id="SaveResultQR" onClick="alert('Saved Successfully')" style="padding-left:11px; padding-right:11px">Save Results</button>
+      </div>
+      <div class= "col-xs-6">
+        <button id="StartCamera" onClick="starting(),changeButton()">Open Camera</button>
+      </div>
+     </div>
+    </div>
 
 
 </div>
 <script src="/js/jsonObject.js"></script>
 <script type="text/javascript" src="js/init.js"></script>
+<script src="js/camera.js"></script>
 <script src="js/main.js"></script>
 
 
+<script type="text/javascript">
+  var track = 0;
+  function changeButton(){
+    if (track == 0){
+      $('#StartCamera').text("Close Camera");
+      $('#StartCamera').attr('onclick', "stopCamera(),changeButton()");
+      track = 1;
+    }
+    else{
+      $('#StartCamera').text("Open Camera");
+      $('#StartCamera').attr('onclick',"starting() , changeButton()");
+      
+      track = 0;
+    }
+  }
+</script>
 
 </body>
 </html>
