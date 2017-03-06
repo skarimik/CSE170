@@ -23,14 +23,15 @@ function errorCallback(error) {
 }
 
 function starting() {
-
+    
+  window.stream = null; // I might not need this here this is for the ap testing
   if (window.stream) {
     videoElement.src = null;
     window.stream.stop();
   }
 
   var audioSource = audioSelect.value;
-  var videoSource = videoSelect.value;//sources[1].id
+  var videoSource = videoSelect.value;
   var constraints = {
     audio: {
       optional: [{

@@ -2,7 +2,7 @@ var person;
 var id_token;
 
 function google(){
-        return 1;
+        return 2;
 }
 function onSignIn(googleUser) {
 
@@ -16,7 +16,7 @@ function onSignIn(googleUser) {
         console.log("Email: " + profile.getEmail());
         $("#starterPageForHtml").load("../index2.html",function(){
         //$("#QRscanner").load("../newCam.html");
-        $("#QRscanner").load("../newCam.html");
+        $("#QRscanner").load("../CamApTesting1.html");
         $("#QRcalendar").load("../quickstart.html");
         //$("#QRgenerator").load("../QRgenerator.html");
         // $("#QRcalendar").load("../quickstart.html");

@@ -70,7 +70,7 @@
 <body id="page-top" class="index">
     <br />
     <br />
-     
+
     <div id="wrapper">
 
         <!-- Sidebar -->
@@ -140,7 +140,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <a id="portalToCalendar" onclick="MakingTheButtonsReady()  " href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                    <a id="portalToCalendar" onclick="MakingTheButtonsReady()" href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -179,7 +179,7 @@
     <!-- Portfolio Modals -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
-            <div onclick="stopCamera()" class="close-modal" data-dismiss="modal">
+            <div id="firstClosingCam" onclick="stopCamera()" class="close-modal" data-dismiss="modal">
                 <div class="lr">
                     <div class="rl">
                     </div>
@@ -191,7 +191,7 @@
                         <div class="modal-body">
                             <div id="QRscanner">
                             </div>
-                            <button onclick="stopCamera()" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            <button id="secondClosingCam" onclick="stopCamera()" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
                 </div>
@@ -319,7 +319,7 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Theme JavaScript -->
     <!--  <script src="./start/js/freelancer.min.js"></script>-->
-    <script src="./js/Google.js"></script>
+    <!-- <script src="./js/Google.js"></script> -->
     <script src="js/camera.js"></script>
 
 
@@ -336,6 +336,13 @@
             settingUp()
         );
     </script>
+    <script type="text/javascript">
+        if(google() == 2){
+            $('#portalToCam').attr('onclick',"MakingTheButtonsReady()");
+            $('#firstClosingCam').attr('onclick',"");
+            $('#secondClosingCam').attr('onclick',"");
+        }
+    </script> 
 
 </body>
 
