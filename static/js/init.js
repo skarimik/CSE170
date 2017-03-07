@@ -102,4 +102,5 @@ function elapseTime() {
 // AB TESTING FUNCTION
 function timeABtest() {
   time = Math.round(new Date());
+  console.log("initial time ", time);
 }
