@@ -97,9 +97,9 @@ function stopScan(){
 
 function elapseTime() {
       var elapse = new Date() - time; //gives elsapsed time
-        console.log("elapse initial time ", time);
-      ga('send', 'timing', 'JS Dependencies', elapse);
-        console.log("elapse time ", elapse);
+      console.log("elapse initial time ", time);
+      ga('send', 'timing', 'scan', 'var', elapse);
+      console.log("elapse time ", elapse);
 }
 
 // AB TESTING FUNCTION
