@@ -1,6 +1,4 @@
 'use strict';
-var time = 0;
-var elapse = 0;
 
 /*
  * Function that is called when the document is ready.
@@ -71,16 +69,6 @@ function AddingEventFunction(result){
 		+"<div>Summary: "+result[x]['summary']+"</div>";
 		x++;
 	}
-
-  function elapseTime() {
-        elapse = new Date() - time; //gives elsapsed time
-        ga('send', 'timing', 'JS Dependencies', elapse);
-  }
-
- // AB TESTING FUNCTION
-  function timeABtest() {
-    time = Math.round(new Date());
-  }
 
 	$(h1Id).html(string);
 

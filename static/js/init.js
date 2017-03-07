@@ -1,12 +1,12 @@
 /* JavaScript code */
-
+var time = 0;
 
 var videoElement = document.querySelector('video');
 var audioSelect = document.querySelector('select#audioSource');
 var videoSelect = document.querySelector('select#videoSource');
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
-var cam_video_id = "camsource"
+var cam_video_id = "camsource";
 var localstream;
 
 var cam = null;
@@ -92,4 +92,14 @@ function stopScan(){
     else{
         console.log("No camera is scanning");
     }
+}
+
+function elapseTime() {
+      var elapse = new Date() - time; //gives elsapsed time
+      ga('send', 'timing', 'JS Dependencies', elapse);
+}
+
+// AB TESTING FUNCTION
+function timeABtest() {
+  time = Math.round(new Date());
 }
