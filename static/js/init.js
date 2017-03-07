@@ -63,7 +63,7 @@ function startReading(){
     starting();
 }
 function stopReading(){
-
+    elapseTime();
     cam.stop();
 }
 function startScan(){
@@ -87,7 +87,7 @@ function stopScan(){
         $('#capture').text('Start Scanning');
         $('#qr-value').text('');
         cam.stop();
-        elapseTime();
+        // elapseTime();
     }
     else{
         console.log("No camera is scanning");
