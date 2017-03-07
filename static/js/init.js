@@ -63,6 +63,7 @@ function startReading(){
     starting();
 }
 function stopReading(){
+    console.log("hello")
     elapseTime();
     cam.stop();
 }
