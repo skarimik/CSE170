@@ -1,5 +1,6 @@
 'use strict';
-
+var time = 0;
+var elapse = 0;
 
 /*
  * Function that is called when the document is ready.
@@ -7,7 +8,7 @@
  var oneTimeToDo = 0;
 function MakingTheButtonsReady() {
 	if(oneTimeToDo == 0){
-		
+
 		$('#IndexaddEvents').click(addEventsHere);
 		$('#SaveResultQR').click(insertTolist);
 		oneTimeToDo = 1;
@@ -19,25 +20,25 @@ function MakingTheButtonsReady() {
  * Make an AJAX call to retrieve project details and add it in
  */
 function addEventsHere(e) {
-	
+
 	// Prevent following the link
 	e.preventDefault();
-	
+
 	var URL = "/event"
 
-	
+
 	$.get(URL,AddingEventFunction);
 	console.log("Url is: "+ URL);
 }
 
 function insertTolist(e) {
-	
+
 	// Prevent following the link
 	e.preventDefault();
-	
+
 	var URL = "/event"
 
-	
+
 	$.get(URL,insertingFunction);
 	console.log("Url is: "+ URL);
 }
@@ -50,7 +51,7 @@ function insertingFunction(result){
 	$('#eventEndDateTime').val(parts[2]);
 	$('#eventLocation').val(parts[3]);
 	$('#eventDescription').val(parts[4]);
-	
+
 	result[result.length] = value;
 	alert("QR Event successfully scanned!");
 }
@@ -70,7 +71,17 @@ function AddingEventFunction(result){
 		+"<div>Summary: "+result[x]['summary']+"</div>";
 		x++;
 	}
-	
-	$(h1Id).html(string);	
-	
+
+  function elapseTime() {
+        elapse = new Date() - time; //gives elsapsed time
+        ga('send', 'timing', 'JS Dependencies', elapse);
+  }
+
+ // AB TESTING FUNCTION
+  function timeABtest() {
+    time = Math.round(new Date());
+  }
+
+	$(h1Id).html(string);
+
 }

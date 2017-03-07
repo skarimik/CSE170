@@ -23,7 +23,7 @@ function errorCallback(error) {
 }
 
 function starting() {
-    
+
   window.stream = null; // I might not need this here this is for the ap testing
   if (window.stream) {
     videoElement.src = null;
@@ -51,19 +51,19 @@ audioSelect.onchange = starting;
 videoSelect.onchange = starting;
 
 function stopCamera(){
-   
+
      window.stream.getTracks()[1].stop()
      window.stream = null;
- 
+
   console.log("Vid off");
 
 }
 function startReading(){
-   
+
     starting();
 }
 function stopReading(){
-  
+
     cam.stop();
 }
 function startScan(){
@@ -73,20 +73,21 @@ function startScan(){
 
 
     if(cam == null){
-      
+
        cam = camera(cam_video_id);
 
 
     }
 
     cam.start();
-    
+
 }
 function stopScan(){
     if(cam != null){
         $('#capture').text('Start Scanning');
         $('#qr-value').text('');
         cam.stop();
+        elapseTime();
     }
     else{
         console.log("No camera is scanning");
