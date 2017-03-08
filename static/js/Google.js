@@ -5,7 +5,7 @@ function google(){
         return 1;
 }
 function onSignIn(googleUser) {
-         $('#loadingCircle').attr('style','display:block')
+        
         
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
@@ -23,7 +23,7 @@ function onSignIn(googleUser) {
         // $("#QRcalendar").load("../quickstart.html");
         // popupWindow = window.open('../quickstart.html', 'name', 'width=500,height=1');
         // setTimeout(function(){ popupWindow.close(); }, 7000);
-        ('#loadingCircle').attr('display','none');
+        $('#loadingCircle').attr('display','none');
 
         });
         
