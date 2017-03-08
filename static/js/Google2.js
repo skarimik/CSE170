@@ -23,7 +23,7 @@ function onSignIn(googleUser) {
         // $("#QRcalendar").load("../quickstart.html");
         // popupWindow = window.open('../quickstart.html', 'name', 'width=500,height=1');
         // setTimeout(function(){ popupWindow.close(); }, 7000);
-        $('#loadingCircle').attr('display','none');
+       
 
         });
         
@@ -33,7 +33,7 @@ function onSignIn(googleUser) {
         $('#signin-form').remove();
         $('#sign-container').remove();
         person = profile;
-        $('#loadingCircle').attr('style','display:none')
+       
         
         // The ID token you need to pass to your backend:
         id_token = googleUser.getAuthResponse().id_token;
