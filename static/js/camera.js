@@ -15,7 +15,7 @@ var camera = (function(p_vid_id, p_inter, p_scale) {
 	function start() {
 		if(int_id == null){
 			int_id = setInterval(function(video, scale) { capture() }, interval);
-			setTimeout(stop, 15000);
+			setTimeout(stopScan, 20000);
 		}
 		console.log(int_id);
 		
