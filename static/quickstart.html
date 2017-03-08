@@ -11,19 +11,56 @@
     <button id="authorize-button" style="display: block;">Authorize</button>
     <button id="signout-button" style="display: none;">Sign Out</button>
     -->
-    <pre id="content"></pre>
-    Summery
-    <input id="eventSummery" type="text">
-    Location
-    <input id="eventLocation" type="text">
-    Description
-    <input id="eventDescription" type="text">
-    Start Date (ex: 2017-11-01T09:00:00-07:00)
-    <input id="eventStartDateTime" type="text">
-    End Date (ex: 2015-11-01T09:00:00-07:00)
-    <input id="eventEndDateTime" type="text">
-    <button onclick="addToGoogle()">Submit</button>
-
+    
+      <pre id="content"></pre>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6">
+            Summery
+          </div>
+          <div class="col-xs-6">
+            <input id="eventSummery" type="text">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+           Location
+          </div>
+          <div class="col-xs-6">
+            <input id="eventLocation" type="text">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            Description
+          </div>
+          <div class="col-xs-6">
+            <input id="eventDescription" type="text">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            Start Date (ex: 2017-11-01T09:00:00-07:00)
+          </div>
+          <div class="col-xs-6">
+            <input id="eventStartDateTime" type="text"> 
+          <div class="col-xs-6">  
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            End Date (ex: 2015-11-01T09:00:00-07:00)
+          </div>
+          <div class="col-xs-6">
+            <input id="eventEndDateTime" type="text">
+          </div>
+        </div>
+        <center>
+        <div class="row">
+          <button onclick="addToGoogle()">Submit</button>
+        </div>
+        </center>
+      </div>
+    
     <script type="text/javascript">
       var lock = 0;
       // Client ID and API key from the Developer Console
