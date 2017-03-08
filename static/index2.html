@@ -160,7 +160,7 @@
             </div>
         </div>
         <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal" >
-            <button style=" color:white; background-color:rgba(234, 7, 215, 0.39); border-radius: 100%; padding: 8px 10px; text-align: center; font-size: 30px; cursor: pointer; right:20px; bottom:90px; position:fixed;"><span class="glyphicon glyphicon-plus"></span></button> 
+            <button style=" color:white; background-color:rgba(234, 7, 215, 0.39); border-radius: 100%; padding: 8px 10px; text-align: center; font-size: 25px; cursor: pointer; right:20px; bottom:90px; position:fixed;"><span class="glyphicon glyphicon-plus"></span></button> 
         </a>
     </section>
      
@@ -187,7 +187,7 @@
     <!-- Portfolio Modals -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
-            <div id="firstClosingCam" onclick="stopCamera()" class="close-modal" data-dismiss="modal">
+            <div id="firstClosingCam" onclick="stopCamera(), stopScan()" class="close-modal" data-dismiss="modal">
                 <div class="lr">
                     <div class="rl">
                     </div>
@@ -199,7 +199,7 @@
                         <div class="modal-body">
                             <div id="QRscanner">
                             </div>
-                            <button id="secondClosingCam" onclick="stopCamera()" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            <button id="secondClosingCam" onclick="stopCamera(), stopScan()" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
                 </div>
