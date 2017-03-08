@@ -52,6 +52,7 @@
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="./css/waiting.css">
 
 	<!-- <link href="css/introHCI.css" rel="stylesheet">
 	<link href="css/introHCI.css" rel="stylesheet"> -->
@@ -100,13 +101,16 @@
 
 
 <body background="http://hopeindayton.org/wp-content/uploads/2014/09/Visit-Hope-Banner-colorful-triangles-small.jpg" style="background-color: #21bcbd">
-
     <center>
+        <div id="loadingCircle" class="loader"></div>
+    </center>
+
+    <center id="allTheContent" display="none">
         <div class="container signing-in" id="starterPageForHtml">
             <div class="container">
                 <div class="row">
                     <div >
-                        <img style="height:350px; width:30px; margin-top:30px;"src="./start/img/Logo.png" class="profile-img">
+                        <img style="height:350px; width:300px; margin-top:30px;" src="./start/img/Logo.png" class="profile-img">
                     </div>
                 </div>
                 <br/>

@@ -5,7 +5,8 @@ function google(){
         return 1;
 }
 function onSignIn(googleUser) {
-
+        $('#loadingCircle').attr('display','block');
+        
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
         console.log("ID: " + profile.getId()); // Don't send this directly to your server!
@@ -22,7 +23,7 @@ function onSignIn(googleUser) {
         // $("#QRcalendar").load("../quickstart.html");
         // popupWindow = window.open('../quickstart.html', 'name', 'width=500,height=1');
         // setTimeout(function(){ popupWindow.close(); }, 7000);
-
+        ('#loadingCircle').attr('display','none');
 
         });
         
@@ -32,6 +33,7 @@ function onSignIn(googleUser) {
         $('#signin-form').remove();
         $('#sign-container').remove();
         person = profile;
+        $('#allTheContent').attr('display','blcok');
         
         // The ID token you need to pass to your backend:
         id_token = googleUser.getAuthResponse().id_token;
