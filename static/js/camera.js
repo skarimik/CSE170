@@ -15,13 +15,15 @@ var camera = (function(p_vid_id, p_inter, p_scale) {
 	function start() {
 		if(int_id == null){
 			int_id = setInterval(function(video, scale) { capture() }, interval);
-			setTimeout(stopScan, 20000);
+			setTimeout(stop, 20000);
 		}
 		console.log(int_id);
 		
 	}
 
 	function stop() {
+		$('#capture').text('Restart Scanning');
+        //$('#qr-value').text('');
 		console.log("Clearing interval with id "+int_id);
 		clearInterval(int_id);
 		int_id = null;
