@@ -7,6 +7,7 @@ function google(){
 function onSignIn(googleUser) {
       
         $('#loadingCircle').attr('style',' display:block; margin-top:300px');
+         $('#allTheContent').attr('style','display:none');
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
         console.log("ID: " + profile.getId()); // Don't send this directly to your server!
