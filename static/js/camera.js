@@ -13,14 +13,18 @@ var camera = (function(p_vid_id, p_inter, p_scale) {
     var int_id   = null;
 
 	function start() {
-
-		int_id = setInterval(function(video, scale) { capture() }, interval);
+		if(int_id == null){
+			int_id = setInterval(function(video, scale) { capture() }, interval);
+			setTimeout(stop, 15000);
+		}
 		console.log(int_id);
+		
 	}
 
 	function stop() {
 		console.log("Clearing interval with id "+int_id);
 		clearInterval(int_id);
+		int_id = null;
 	}
 
 	function capture() {
