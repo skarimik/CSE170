@@ -10,6 +10,11 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
         <!-- <script type="text/javascript" src="/static/js/bootstrap.min.js"></script> -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+
+        <!-- include the FileSaver.js script ref -->
+        <script type="text/javascript" src="js/FileSaver.js"></script>
+        <script type="text/javascript" src="js/Blob.js"></script>
+
         <!-- include Bootstrap DateTimePicker CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
@@ -145,12 +150,10 @@
                     <!-- (GENERATED) QR CODE -->
                     <div class="container" style="display: table; margin: 0 auto">
                         <div class="row">
+                            <div id="qrTitle" style="text-align: center" text=""></div>
+                            <div class="image-container" id="generatedQRCode" style="vertical-align: middle"></div>
                             <div id="qrDescription" style="text-align: center" text=""></div>
-                            <div class="image-container" id="generatedQRCode">
-                            </div>
-                            
                         </div>
-                       
                     </div>
                 </div>
             </form>
