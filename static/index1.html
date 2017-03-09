@@ -68,6 +68,7 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
 	<!-- <script type="text/javascript" src="/static/js/bootstrap.min.js"></script> -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+	 <link rel="stylesheet" href="./css/waiting1.css">
 	<!-- include Bootstrap DateTimePicker CSS -->
 
 
@@ -97,33 +98,35 @@
 </head>
 
 <body background="http://hopeindayton.org/wp-content/uploads/2014/09/Visit-Hope-Banner-colorful-triangles-small.jpg" style="background-color: #21bcbd">
-
-    <center>
-    	<div class="container signing-in" id="starterPageForHtml">
-    		<div class="container">
-    			<div class="row">
-    				<div >
-    					<img src="./start/img/Logo.png" class="profile-img">
-    				</div>
-    			</div>
-    			<br/>
-    			<br/>
-    			<hr/>
-    			<div class="row">
-    				<div >
-
-    				</div>
-    				<div >
-
-    					<div id="signIn" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-    				</div>
-    				<div ></div>
-
-    			</div>
-    		</div>
-    	</div>
+    <center style=" display:none; margin-top:300px" id="loadingCircle">
+        <div id='insideLoader' class='loader'></div>
     </center>
 
+    <center id="allTheContent" style="display:block">
+        <div class="container signing-in" id="starterPageForHtml">
+            <div class="container">
+                <div class="row">
+                    <div >
+                        <img style="height:350px; width:300px; margin-top:30px;" src="./start/img/Logo.png" class="profile-img">
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <hr/>
+                <div class="row">
+                    <div >
+
+                    </div>
+                    <div >
+
+                        <div id="signIn" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                    </div>
+                    <div ></div>
+
+                </div>
+            </div>
+        </div>
+    </center>
 
 
 

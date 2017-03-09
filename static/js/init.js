@@ -63,7 +63,7 @@ function startReading(){
     starting();
 }
 function stopReading(){
-    console.log("hello")
+ 
     elapseTime();
     cam.stop();
 }
@@ -85,7 +85,7 @@ function startScan(){
 }
 function stopScan(){
     if(cam != null){
-        $('#capture').text('Start Scanning');
+        $('#capture').text('Restart Scanning');
         $('#qr-value').text('');
         cam.stop();
         // elapseTime();
@@ -98,7 +98,7 @@ function stopScan(){
 function elapseTime() {
       var elapse = new Date() - time; //gives elsapsed time
       console.log("elapse initial time ", time);
-      ga('send', 'timing', 'scan', 'var', elapse);
+      ga('send', 'timing', 'scan', elapse, elapse);
       console.log("elapse time ", elapse);
 }
 
