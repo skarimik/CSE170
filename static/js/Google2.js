@@ -42,5 +42,6 @@ function onSignIn(googleUser) {
 };
 function settingUp(){
         $('#FirstName').text(person.getGivenName());
+         $('#profilePicture').attr('src', person.getImageUrl());
 
 }

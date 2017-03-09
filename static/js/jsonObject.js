@@ -51,7 +51,7 @@ function insertingFunction(result){
 	$('#eventDescription').val(parts[4]);
 
 	result[result.length] = value;
-	alert("QR Event successfully scanned!");
+	alert("QR Event successfully Saved!");
 }
 
 /*
