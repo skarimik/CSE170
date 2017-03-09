@@ -184,6 +184,7 @@ function generateQR(e) {
     }
 
     console.log('Printing qrcode text' + qrcodeFullText);
+/*
     var x = jQuery("#generatedQRCode").qrcode({width: 200, height: 200, text:qrcodeFullText});
 
     $('#generatedQRCode canvas').click(function() {
@@ -192,12 +193,15 @@ function generateQR(e) {
         //document.write('<img src="'+img+'"/>');
         //qrDownload = qrDownload.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
         $('#generatedQRCode canvas').attr('href',qrDownload);
-
     });
-
-    
+*/
+    jQuery('#generatedQRCode').qrcode({width: 200, height: 200, text:qrcodeFullText});
+    $("#generatedQRCode canvas").css("margin", "auto");
+//    $("#qrImage").attr("src", $("#generatedQRCode").src);
     $('#qrDescription').html("");
-    $("#qrDescription").html("Press the image once and then pressn and hold the image to save to your mobile");
+    $('#qrDescription').html("If your browser has not downloaded the image \"qrcode.png\", take a screenshot to save");
+    $('#qrTitle').html("");
+    $('#qrTitle').html("Your EventQR for the \"" + qrcodeTitle + "\" Event");
     
 
 

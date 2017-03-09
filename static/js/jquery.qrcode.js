@@ -44,6 +44,12 @@
             }
             // return just built canvas
             return canvas;
+            /*
+            return image instead of canvas
+            var image = new Image();
+            image.src = canvas.toDataURL("image/png");
+            return image;
+            */
         }
 
         // from Jon-Carlos Rivera (https://github.com/imbcmdth)
@@ -83,10 +89,29 @@
   
 
         return this.each(function(){
+            
             var element = options.render == "canvas" ? createCanvas() : createTable();
-            // remove any pre-existing qrcode canvas before appending
+            // remove any pre-existing qrcode canvas before appending 
+            // & create an automatically downloaded file of the qrcode
+            element.toBlob(function(blob) {
+                saveAs(blob, "qrcode.png");
+            });
+
             $(this).html("");
             $(element).appendTo(this);
+            
+
+
+
+            /* 
+            turn the canvas into an image
+            var element = createCanvas();
+            console.log("Printing the qr code original element (hopefully an img) " + element.src);
+            $(this).html("");
+            $(this).attr("src", element.src);
+            $(element).appendTo(this);
+            */
+
         });
     };
 })( jQuery );
