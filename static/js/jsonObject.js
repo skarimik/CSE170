@@ -8,7 +8,7 @@ function MakingTheButtonsReady() {
 	if(oneTimeToDo == 0){
 
 		$('#IndexaddEvents').click(addEventsHere);
-		$('#SaveResultQR').click(insertTolist,addToGoogle);
+		$('#SaveResultQR').click(insertTolist);
 		oneTimeToDo = 1;
 	}
 	console.log("changing the click");
