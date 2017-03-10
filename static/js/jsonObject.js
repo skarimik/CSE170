@@ -38,6 +38,7 @@ function insertTolist(e) {
 
 
 	$.get(URL,insertingFunction);
+
 	console.log("Url is: "+ URL);
 }
 function insertingFunction(result){
@@ -52,6 +53,7 @@ function insertingFunction(result){
 
 	result[result.length] = value;
 	alert("QR Event successfully Saved!");
+	addToGoogle();
 }
 
 /*
