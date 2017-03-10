@@ -1,0 +1,176 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+	<!-- Google Analytics Content Experiment code -->
+	<script>
+		function utmx_section() {}
+
+		function utmx() {}(function() {
+			var
+				k = '142026270-0',
+				d = document,
+				l = d.location,
+				c = d.cookie;
+			if (l.search.indexOf('utm_expid=' + k) > 0) return;
+
+			function f(n) {
+				if (c) {
+					var i = c.indexOf(n + '=');
+					if (i > -1) {
+						var j = c.
+						indexOf(';', i);
+						return escape(c.substring(i + n.length + 1, j < 0 ? c.length : j))
+					}
+				}
+			}
+			var x = f('__utmx'),
+				xx = f('__utmxx'),
+				h = l.hash;
+			d.write(
+				'<sc' + 'ript src="' + 'http' + (l.protocol == 'https:' ? 's://ssl' :
+					'://www') + '.google-analytics.com/ga_exp.js?' + 'utmxkey=' + k +
+				'&utmx=' + (x ? x : '') + '&utmxx=' + (xx ? xx : '') + '&utmxtime=' + new Date().valueOf() + (h ? '&utmxhash=' + escape(h.substr(1)) : '') +
+				'" type="text/javascript" charset="utf-8"><\/sc' + 'ript>')
+		})();
+	</script>
+
+	<script>
+		utmx('url', 'A/B');
+	</script>
+	<!-- End of Google Analytics Content Experiment code -->
+
+
+
+
+
+	<link href="css/simple-sidebar.css" rel="stylesheet">
+	<link href="css/signIn.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+
+	<!-- <link href="css/introHCI.css" rel="stylesheet">
+	<link href="css/introHCI.css" rel="stylesheet"> -->
+	<title>EventQueuer</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="google-signin-scope" content="profile email https://www.googleapis.com/auth/calendar">
+	<meta name="google-signin-client_id" content="353317309491-3ed3on54tpim02gc5sg7tt8njnfi24gs.apps.googleusercontent.com">
+
+
+	<script type="text/javascript" src="js/lib/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+	<!-- <script type="text/javascript" src="/static/js/bootstrap.min.js"></script> -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+	 <link rel="stylesheet" href="./css/waiting1.css">
+	<!-- include Bootstrap DateTimePicker CSS -->
+
+
+
+	<!--  <script type="text/javascript" src="js/lib/jsqrcode/grid.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/version.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/detector.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/formatinf.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/errorlevel.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/bitmat.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/datablock.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/bmparser.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/datamask.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/rsdecoder.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/gf256poly.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/gf256.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/decoder.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/QRCode.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/findpat.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/alignpat.js"></script>
+    <script type="text/javascript" src="js/lib/jsqrcode/databr.js"></script> We do not need these either-->
+
+
+	<!-- include QR code libraries and eventgenerator.js -->
+
+
+</head>
+
+<body background="http://hopeindayton.org/wp-content/uploads/2014/09/Visit-Hope-Banner-colorful-triangles-small.jpg" style="background-color: #bd2144; background-blend-mode: screen;">
+    <center style=" display:none; margin-top:300px" id="loadingCircle">
+        <div id='insideLoader' class='loader'></div>
+    </center>
+
+    <center id="allTheContent" style="display:block">
+        <div class="container signing-in" id="starterPageForHtml">
+            <div class="container">
+                <div class="row">
+                    <div >
+                        <img style="height:350px; width:300px; margin-top:30px;" src="./start/img/Logo.png" class="profile-img">
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <hr/>
+                <div class="row">
+                    <div >
+
+                    </div>
+                    <div >
+
+                        <div id="signIn" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                    </div>
+                    <div ></div>
+
+                </div>
+            </div>
+        </div>
+    </center>
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="./js/Google2.js"></script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="https://code.jquery.com/jquery.js"></script>
+
+
+
+
+	<!--<script src="js/introHCI.js"></script>-->
+	<!-- Include all compiled plugins (blelow), or include individual files as needed -->
+	<script src="./start/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="/js/jsonObject.js"></script>
+
+
+
+	<script>
+		$("#menu-toggle").click(function(e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("toggled");
+		});
+	</script>
+
+	<!-- GOOGLE ANALYTICS SCRIPT  -->
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-93103354-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+</body>
+
+</html>
