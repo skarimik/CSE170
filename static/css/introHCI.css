@@ -3,11 +3,11 @@
 	height:900px;
 }
 #CreateQRButton { 
-    color: white;
+    color: rgb(24, 129, 245);
 
     height:70px;
     width:70px;
-    right: 20%;
-    bottom: 30%;
+    right: 10%;
+    bottom: 20%;
     position: fixed;
 }
