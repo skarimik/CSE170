@@ -4,12 +4,9 @@
 }
 #CreateQRButton { 
     color: white;
-    background-color: rgb(226, 20, 209);
-    border-radius: 100%;
-    padding: 6px 10px;
-    text-align: center;
-    font-size: 25px;
-    cursor: pointer;
+
+    height:70px;
+    width:70px;
     right: 30px;
     bottom: 116px;
     position: fixed;
