@@ -11,9 +11,9 @@ function read(a)
 	$('#firstEl').text("Event Summary: "+parts[0]);
 	$('#secondEl').text("Start Date: "+parts[1]);
 	$('#thirdEl').text("End Date: "+parts[2]);
-	$('#fourthEl').text("Location: "+(parts[3]);
+	$('#fourthEl').text("Location: "+parts[3]);
 	$('#fifthEl').text("Description: "+parts[4]);
-  
+  	$('#qr-value').attr('style','display:block');
     $('#capture').text("Restart Scanning");
     stopReading();
     alert("Scanning Completed");
