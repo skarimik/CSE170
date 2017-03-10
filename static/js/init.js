@@ -86,7 +86,8 @@ function startScan(){
 function stopScan(){
     if(cam != null){
         $('#capture').text('Restart Scanning');
-        $('#qr-value').text('');
+        $('#qr-value').text('You Need To Restart Scanning');
+        $('#qr-value').attr('style','color:red');
         cam.stop();
         // elapseTime();
     }
