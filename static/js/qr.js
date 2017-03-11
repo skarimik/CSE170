@@ -8,7 +8,13 @@ function read(a)
 	$('#eventEndDateTime').val(parts[2]);
 	$('#eventLocation').val(parts[3]);
 	$('#eventDescription').val(parts[4]);
-	$('#qr-value').attr('style','display:block');
+	$('#qr-value').text("<ul>"+
+       "<li id='firstEl'></li>"+
+       "<li id='secondEl'></li>"+
+       "<li id='thirdEl'></li>"+
+       "<li id='fourthEl'></li>"+
+       "<li id='fifthEl'></li>"+
+     "</ul>");
 	$('#firstEl').text("Event Summary: "+parts[0]);
 	$('#secondEl').text("Start Date: "+parts[1]);
 	$('#thirdEl').text("End Date: "+parts[2]);
