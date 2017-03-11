@@ -8,7 +8,7 @@ function read(a)
 	$('#eventEndDateTime').val(parts[2]);
 	$('#eventLocation').val(parts[3]);
 	$('#eventDescription').val(parts[4]);
-	$('#qr-value').text("<ul>"+
+	$('#qr-value').append("<ul>"+
        "<li id='firstEl'></li>"+
        "<li id='secondEl'></li>"+
        "<li id='thirdEl'></li>"+
