@@ -100,9 +100,6 @@
             $(this).html("");
             $(element).appendTo(this);
             
-
-
-
             /* 
             turn the canvas into an image
             var element = createCanvas();
