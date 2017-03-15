@@ -82,7 +82,7 @@
                 <li class="sidebar-brand">
                     <div class="row">
                         <div class="col-xs-6">
-                            <a id="FirstName" href="#"></a>
+                            <a  id="FirstName"></a>
                         </div>
                         <div class="col-xs-6">
                             <img id="profilePicture" style="height:50px; width:50px">
@@ -95,7 +95,7 @@
                 </li>
 
                 <li>
-                    <a href='#' id='authorize-button'>Log Out</a>
+                    <a href='#' id='authorize-button' onclick="signOut()">Log Out</a>
                 </li>
 
             </ul>
@@ -169,7 +169,7 @@
         </div>
 
         <div class="portfolio-link" data-toggle="modal">
-            <div href="#portfolioModal2" class="portfolio-link" data-toggle="modal" id="CreateQRButton"><span class="glyphicon glyphicon-plus-sign"></span></div>
+            <div href="#portfolioModal2" class="portfolio-link" data-toggle="modal" id="CreateQRButton"><span style="margin-top: 90%; margin-left: 60%;" class="glyphicon glyphicon-plus-sign"></span></div>
         </div>
     </section>
 
@@ -486,6 +486,14 @@
             $('#secondClosingCam').attr('onclick', "");
         }
     </script>
+    <script>
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+            console.log('User signed out.');
+        });
+  }
+</script>
 
 </body>
 
