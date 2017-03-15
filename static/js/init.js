@@ -6,6 +6,7 @@ var audioSelect = document.querySelector('select#audioSource');
 var videoSelect = document.querySelector('select#videoSource');
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
+var x = 0;
 var cam_video_id = "camsource";
 var localstream;
 
@@ -21,7 +22,20 @@ function successCallback(stream) {
 function errorCallback(error) {
   alert('navigator.getUserMedia error: ', error);
 }
+function toggle(){
+  var val;
+  if(x == 0){
+    val = $('#videoSource option:eq(1)').val()
+    x == 1;
+  }
+  else if(x == 1){
+    val = $('#videoSource option:eq(0)').val()
+    x == 0
+  }
 
+  $('select#audioSource').val(val);
+  starting();
+}
 function starting() {
 
   window.stream = null; // I might not need this here this is for the ap testing
@@ -99,7 +113,7 @@ function stopScan(){
 function elapseTime() {
       var elapse = new Date() - time; //gives elsapsed time
       console.log("elapse initial time ", time);
-      ga('send', 'timing', 'scan', elapse, elapse);
+      // ga('send', 'timing', 'scan', elapse, elapse);
       console.log("elapse time ", elapse);
 }
 

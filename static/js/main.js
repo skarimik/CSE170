@@ -4,6 +4,8 @@ var videoElement = document.querySelector('video');
 var audioSelect = document.querySelector('select#audioSource');
 var videoSelect = document.querySelector('select#videoSource');
 var sources;
+var videos =[];
+var x = 0;
 navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
@@ -20,6 +22,8 @@ function gotSources(sourceInfos) {
     } else if (sourceInfo.kind === 'video') {
       option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
       videoSelect.appendChild(option);
+      videos[x] = option;
+      x = x+1;
     } else {
       console.log('Some other kind of source: ', sourceInfo);
     }
@@ -43,7 +47,10 @@ function successCallback(stream) {
 function errorCallback(error) {
   alert('navigator.getUserMedia error: ', error);
 }
-
+function toggle(){
+  $('select#audioSource').val(videos[x]);
+  starting();
+}
 function starting() {
 
   if (window.stream) {

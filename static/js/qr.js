@@ -24,7 +24,8 @@ function read(a)
   	
     $('#capture').text("Restart Scanning");
     stopReading();
-    alert("Scanning Completed");
+    alert("Scanning completed, click on save button to save the result to your calendar.");
+    $('#SaveResultQR').attr('style','display:block');
 
 }
     
