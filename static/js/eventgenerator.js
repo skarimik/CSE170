@@ -45,27 +45,28 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-    $('label[for=event_title]').css({color:'red'});
+   
+//    $('label[for=event_title]').css({color:'red'});
     $('#event_title').keypress(function(){
         $('label[for=event_title]').css({color:'black'});
     });
 
-    $('label[for=datetimepicker6]').css({color:'red'});
+//    $('label[for=datetimepicker6]').css({color:'red'});
     $('#datetimepicker6').keypress(function(){
         $('label[for=datetimepicker6]').css({color:'black'});
     });
 
-    $('label[for=datetimepicker7]').css({color:'red'});
+//    $('label[for=datetimepicker7]').css({color:'red'});
     $('#datetimepicker7').keypress(function(){
         $('label[for=datetimepicker7]').css({color:'black'});
     });
 
-    $('label[for=event_location]').css({color:'red'});
+//    $('label[for=event_location]').css({color:'red'});
     $('#event_location').keypress(function(){
         $('label[for=event_location]').css({color:'black'});
     });
 
-    $('label[for=event_description]').css({color:'red'});
+//    $('label[for=event_description]').css({color:'red'});
     $('#event_description').keypress(function(){
         $('label[for=event_description]').css({color:'black'});
     });
