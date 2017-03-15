@@ -28,11 +28,11 @@ function gotSources(sourceInfos) {
       console.log('Some other kind of source: ', sourceInfo);
     }
   }
-  if(index < 1){
+  
+}
+if(index < 1){
     $('#toggleCam').attr('style','display:none ');
   }
-}
-
 if (typeof MediaStreamTrack === 'undefined' ||
     typeof MediaStreamTrack.getSources === 'undefined') {
   alert('This browser does not support MediaStreamTrack.\n\nTry Chrome.');
