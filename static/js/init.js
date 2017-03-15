@@ -26,18 +26,19 @@ function toggle(){
   var val;
   if(x == 0){
     x = 1;
-    val = $('select#videoSource option:eq(1)').val()
-   
+    videoSelect.value = $('select#videoSource option:eq(1)').val()
+    alert($('select#videoSource option:eq(1)').val())
     
   }
   else if(x == 1){
     x = 0
-  
-    val = $('select#videoSource option:eq(0)').val()
-
+   
+    videoSelect.value = $('select#videoSource option:eq(0)').val()
+    alert($('select#videoSource option:eq(0)').val())
+    
   }
 
-  $('select#audioSource').val(val);
+  //$('select#videoSource').val(val);
   starting();
 }
 function starting() {
