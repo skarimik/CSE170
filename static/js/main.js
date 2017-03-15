@@ -20,7 +20,7 @@ function gotSources(sourceInfos) {
       audioSelect.appendChild(option);
     } else if (sourceInfo.kind === 'video') {
       option.text = sourceInfo.id;
-      alert(video);
+      alert("video");
       console.log(index);
       
       videoSelect.appendChild(option);
