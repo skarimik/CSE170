@@ -4,7 +4,7 @@ var videoElement = document.querySelector('video');
 var audioSelect = document.querySelector('select#audioSource');
 var videoSelect = document.querySelector('select#videoSource');
 var sources;
-var index = 0;
+
 navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
@@ -21,17 +21,14 @@ function gotSources(sourceInfos) {
     } else if (sourceInfo.kind === 'video') {
       option.text = sourceInfo.id;
       console.log(index);
-      index = index + 1;
+      
       videoSelect.appendChild(option);
       
     } else {
       console.log('Some other kind of source: ', sourceInfo);
     }
   }
-  console.log(index);
-if(index < 2){
-    $('#toggleCam').attr('style','display:none ');
-}
+
 
 }
 
