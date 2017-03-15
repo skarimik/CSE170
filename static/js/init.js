@@ -38,7 +38,7 @@ function toggle(){
     
   }
 
-  $('select#videoSource').val(val);
+  //$('select#videoSource').val(val);
   starting();
 }
 function starting() {
