@@ -39,7 +39,7 @@ function toggle(){
   }
 
   $('select#videoSource').val(val);
-  starting();
+  //starting();
 }
 function starting() {
 
