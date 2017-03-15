@@ -35,7 +35,7 @@ function insertTolist(e) {
 	// Prevent following the link
 	e.preventDefault();
 
-	var URL = "/event"
+    var URL = "/event"
 
 
 	$.get(URL,insertingFunction);
