@@ -25,12 +25,17 @@ function errorCallback(error) {
 function toggle(){
   var val;
   if(x == 0){
-    val = $('#videoSource option:eq(1)').val()
-    x == 1;
+    x = 1;
+    val = $('select#videoSource option:eq(1)').val()
+    alert($('select#videoSource option:eq(1)').val())
+    
   }
   else if(x == 1){
-    val = $('#videoSource option:eq(0)').val()
-    x == 0
+    x = 0
+    alert(1)
+    val = $('select#videoSource option:eq(0)').val()
+    alert($('select#videoSource option:eq(0)').val())
+    
   }
 
   $('select#audioSource').val(val);
