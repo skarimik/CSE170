@@ -26,15 +26,26 @@ function toggle(){
   var val;
   if(x == 0){
     x = 1;
-    videoSelect.value = $('select#videoSource option:eq(1)').val()
-    alert($('select#videoSource option:eq(1)').val())
+    val = $('select#videoSource option:eq(1)').val()
+    if(val == undefined){alert("There are no other camera available.")
+      return;
+    }
+    else{
+      videoSelect.value = val;
+    }
+   
     
   }
   else if(x == 1){
     x = 0
-   
-    videoSelect.value = $('select#videoSource option:eq(0)').val()
-    alert($('select#videoSource option:eq(0)').val())
+    val = $('select#videoSource option:eq(0)').val()
+    if(val == undefined){alert("There are no other camera available.")
+      return;
+    }
+    else{
+      videoSelect.value = val;
+    }
+    
     
   }
 

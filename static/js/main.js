@@ -20,7 +20,7 @@ function gotSources(sourceInfos) {
       audioSelect.appendChild(option);
     } else if (sourceInfo.kind === 'video') {
       option.text = sourceInfo.id;
-    
+      console.log(index);
       index = index + 1;
       videoSelect.appendChild(option);
       
@@ -28,7 +28,11 @@ function gotSources(sourceInfos) {
       console.log('Some other kind of source: ', sourceInfo);
     }
   }
-  
+  console.log(index);
+if(index < 2){
+    $('#toggleCam').attr('style','display:none ');
+}
+
 }
 
 if (typeof MediaStreamTrack === 'undefined' ||
@@ -75,7 +79,5 @@ function starting() {
 audioSelect.onchange = starting;
 videoSelect.onchange = starting;
 
-if(index < 1){
-    $('#toggleCam').attr('style','display:none ');
-}
+
 
