@@ -4,7 +4,7 @@ var videoElement = document.querySelector('video');
 var audioSelect = document.querySelector('select#audioSource');
 var videoSelect = document.querySelector('select#videoSource');
 var sources;
-
+var index = 0;
 navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
@@ -20,6 +20,8 @@ function gotSources(sourceInfos) {
       audioSelect.appendChild(option);
     } else if (sourceInfo.kind === 'video') {
       option.text = sourceInfo.id;
+    
+      index = index + 1;
       videoSelect.appendChild(option);
       
     } else {
@@ -27,7 +29,9 @@ function gotSources(sourceInfos) {
     }
   }
 }
-
+if(index < 1){
+  $('#toggleCam').attr('style','display:none ');
+}
 if (typeof MediaStreamTrack === 'undefined' ||
     typeof MediaStreamTrack.getSources === 'undefined') {
   alert('This browser does not support MediaStreamTrack.\n\nTry Chrome.');
