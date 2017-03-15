@@ -43,7 +43,7 @@ function toggle(){
 }
 function starting() {
 
-  window.stream = null; // I might not need this here this is for the ap testing
+  //window.stream = null; // I might not need this here this is for the ap testing
   if (window.stream) {
     videoElement.src = null;
     window.stream.stop();
