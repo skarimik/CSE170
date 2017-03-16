@@ -9,6 +9,7 @@ function MakingTheButtonsReady() {
 
 		$('#IndexaddEvents').click(addEventsHere);
 		$('#SaveResultQR').click(insertTolist);
+
 		oneTimeToDo = 1;
 	}
 	console.log("changing the click");
@@ -34,7 +35,7 @@ function insertTolist(e) {
 	// Prevent following the link
 	e.preventDefault();
 
-	var URL = "/event"
+    var URL = "/event"
 
 
 	$.get(URL,insertingFunction);
@@ -52,8 +53,10 @@ function insertingFunction(result){
 	// $('#eventDescription').val(parts[4]);
 
 	result[result.length] = value;
-	alert("QR Event successfully Saved!");
+	
 	addToGoogle();
+	$('#SaveResultQR').attr('style','display:none');
+	alert("QR Event successfully Saved!");
 }
 
 /*

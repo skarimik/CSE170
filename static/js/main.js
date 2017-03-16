@@ -4,6 +4,7 @@ var videoElement = document.querySelector('video');
 var audioSelect = document.querySelector('select#audioSource');
 var videoSelect = document.querySelector('select#videoSource');
 var sources;
+
 navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
@@ -18,12 +19,18 @@ function gotSources(sourceInfos) {
         (audioSelect.length + 1);
       audioSelect.appendChild(option);
     } else if (sourceInfo.kind === 'video') {
-      option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
+      option.text = sourceInfo.id;
+      //alert("video");
+      
+      
       videoSelect.appendChild(option);
+      
     } else {
       console.log('Some other kind of source: ', sourceInfo);
     }
   }
+
+
 }
 
 if (typeof MediaStreamTrack === 'undefined' ||
