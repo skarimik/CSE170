@@ -93,12 +93,14 @@
             var element = options.render == "canvas" ? createCanvas() : createTable();
             // remove any pre-existing qrcode canvas before appending 
             // & create an automatically downloaded file of the qrcode
+            
+            $(this).html("");
+            $(element).appendTo(this);
+
             element.toBlob(function(blob) {
                 saveAs(blob, "qrcode.png");
             });
 
-            $(this).html("");
-            $(element).appendTo(this);
             
             /* 
             turn the canvas into an image
