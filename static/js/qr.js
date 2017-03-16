@@ -21,7 +21,8 @@ function read(a)
  		  "Start Date: "+ parts[1]+"\n"+
  		  "End Date: "+ parts[2]+"\n"+
  		  "Location: "+ parts[3]+"\n"+
- 		  "Description: "+ parts[4]
+ 		  "Description: "+ parts[4]+"\n"+
+ 		  "Link: " + parts[5];
  	);
 	// $('#firstEl').text("Event Summary: "+parts[0]);
 	// $('#secondEl').text("Start Date: "+parts[1]);
