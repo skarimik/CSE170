@@ -13,11 +13,9 @@ $(function () {
         useCurrent: false //Important! See issue #1075
     });
     $("#datetimepicker6").on("dp.change", function (e) {
-        $('label[for=datetimepicker6]').css({color:'black'});
         $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
     });
     $("#datetimepicker7").on("dp.change", function (e) {
-        $('label[for=datetimepicker7]').css({color:'black'});
         $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
     });
 });
@@ -46,6 +44,13 @@ $(document).ready(function() {
  */
 function initializePage() {
    
+    $('#datetimepicker6').on('changeDate', function(e){
+        $(this).datepicker('hide');
+    });
+    $('#datetimepicker7').on('changeDate', function(e) {
+        $(this).datepicker('hide');
+    });
+
 //    $('label[for=event_title]').css({color:'red'});
     $('#event_title').keypress(function(){
         $('label[for=event_title]').css({color:'black'});
@@ -53,6 +58,7 @@ function initializePage() {
 
 //    $('label[for=datetimepicker6]').css({color:'red'});
     $('#datetimepicker6').keypress(function(){
+        $("#datetimepicker7").focus();
         $('label[for=datetimepicker6]').css({color:'black'});
     });
 
